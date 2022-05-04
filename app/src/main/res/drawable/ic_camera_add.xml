@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/color_f1f1f1" />
+            <size
+                android:width="@dimen/_40sdp"
+                android:height="@dimen/_40sdp" />
+        </shape>
+    </item>
+    <item
+        android:bottom="@dimen/_8sdp"
+        android:drawable="@drawable/ic_camera_2"
+        android:left="@dimen/_8sdp"
+        android:right="@dimen/_8sdp"
+        android:top="@dimen/_8sdp" />
+
+    <item
+        android:bottom="@dimen/_18sdp"
+        android:drawable="@drawable/ic_add"
+        android:left="@dimen/_15sdp"
+        android:right="@dimen/_20sdp"
+        android:top="@dimen/_18sdp" />
+</layer-list>

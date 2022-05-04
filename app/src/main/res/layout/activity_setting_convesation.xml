@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/im_back"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/_7sdp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:text="@string/setting"
+        android:textSize="@dimen/_17sdp"
+        app:layout_constraintBottom_toBottomOf="@id/im_back"
+        app:layout_constraintStart_toEndOf="@id/im_back"
+        app:layout_constraintTop_toTopOf="@+id/im_back" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/black_10"
+        app:layout_constraintTop_toBottomOf="@+id/im_back" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_edit_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/edit_name"
+        android:textColor="@color/color_0084f0"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/im_back" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edt_input_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:ellipsize="end"
+        android:hint="@string/enter_name"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        app:layout_constraintTop_toBottomOf="@+id/tv_edit_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_online_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/online_status"
+        android:textColor="@color/color_0084f0"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_input_name" />
+
+    <RadioGroup
+        android:id="@+id/rdg_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_6sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_online_status">
+
+        <RadioButton
+            android:id="@+id/rd_active"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/active" />
+
+        <RadioButton
+            android:id="@+id/rd_active_ago"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/active_ago" />
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edt_time_ago"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:ellipsize="end"
+        android:hint="@string/enter_time_ago"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        android:text="@string/active_2_ago"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/rdg_status"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_chat_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/select_chat_color"
+        android:textColor="@color/color_0084f0"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_time_ago" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_color"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/btn_save"
+        app:layout_constraintTop_toBottomOf="@+id/tv_chat_color"
+        app:spanCount="5"
+        tools:listitem="@layout/item_color" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintBottom_toTopOf="@+id/ll_ads" />
+
+    <include
+        android:id="@+id/ll_ads"
+        layout="@layout/layout_banner_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

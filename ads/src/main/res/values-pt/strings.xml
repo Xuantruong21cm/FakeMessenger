@@ -1,0 +1,12 @@
+<resources>
+
+
+    <string name="rate_msg">Nossa equipe está dando o máximo para oferecer a melhor aplicação gratuita. A sua avaliação de 5 estrelas vale muito mais do que todo o dinheiro. Por favor, escreva uma boa avaliação no Google Play para nos encorajar.</string>
+    <string name="remind_later">Lembrar mais tarde</string>
+    <string name="good_5_stars">Bom, 5 estrelas</string>
+    <string name="not_good">Não é bom</string>
+    <string name="title_dialog_feed_back">Envie um feedback</string>
+    <string name="message_dialog_feed_back">Solicite correção de bug e implementar novos recursos via email</string>
+    <string name="exit_app">Exit</string>
+
+</resources>

@@ -1,0 +1,68 @@
+plugins {
+    id 'com.android.application'
+    id 'realm-android'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.lubuteam.fakemessenger.fakeconversation"
+        minSdkVersion 21
+        targetSdkVersion 30
+        vectorDrawables.useSupportLibrary = true
+        ndk.abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    /*https://github.com/intuit/sdp*/
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    /*https://github.com/google/gson*/
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    /*https://github.com/bumptech/glide*/
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation project(path: ':ads')
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    /*https://github.com/hdodenhof/CircleImageView*/
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    /*https://github.com/ArthurHub/Android-Image-Cropper*/
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    /*https://github.com/vinc3m1/RoundedImageView*/
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    /*https://github.com/airbnb/lottie-android*/
+    implementation 'com.airbnb.android:lottie:3.4.0'
+
+    /*https://github.com/daimajia/AndroidViewAnimations*/
+    implementation 'com.daimajia.easing:library:2.0@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+
+}

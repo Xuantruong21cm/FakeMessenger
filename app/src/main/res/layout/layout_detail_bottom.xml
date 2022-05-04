@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:padding="@dimen/_5sdp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/im_more"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/_9sdp"
+        android:src="@drawable/ic_more"
+        android:tint="@color/color_0084f0" />
+
+    <LinearLayout
+        android:id="@+id/ll_opt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/im_take_photo"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/ic_camera"
+            android:tint="@color/color_0084f0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/im_picture"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/ic_picture"
+            android:tint="@color/color_0084f0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/im_record"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/ic_microphone"
+            android:tint="@color/color_0084f0" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/bg_chat_single"
+        android:backgroundTint="@color/color_f1f1f1"
+        android:gravity="center"
+        android:minHeight="@dimen/_30sdp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/Aa"
+            android:padding="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black_50"
+            android:textSize="@dimen/_12sdp">
+
+            <requestFocus />
+        </androidx.appcompat.widget.AppCompatEditText>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/im_emoji"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/_7sdp"
+            android:src="@drawable/ic_emoji"
+            android:tint="@color/color_0084f0" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/im_send"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/_7sdp"
+        android:src="@drawable/ic_like"
+        android:tint="@color/color_0084f0" />
+</LinearLayout>

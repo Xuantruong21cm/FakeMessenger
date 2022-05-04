@@ -1,0 +1,32 @@
+<resources>
+
+    <style name="AdsAppTheme" parent="Theme.AppCompat.Light" />
+
+
+    <style name="DialogTheme" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+    </style>
+
+    <style name="AppTheme.Ads" parent="@style/AdsAppTheme">
+        <item name="android:textSize">11.0sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:background">@drawable/ads_icon</item>
+        <item name="android:paddingLeft">3.0dip</item>
+        <item name="android:paddingRight">6.0dip</item>
+        <item name="android:paddingBottom">1.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">13.0px</item>
+        <item name="android:minHeight">13.0px</item>
+        <item name="android:text">AD</item>
+    </style>
+    <style name="PauseDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fade_in_ads</item>
+        <item name="android:windowExitAnimation">@anim/fade_out_ads</item>
+    </style>
+
+
+</resources>

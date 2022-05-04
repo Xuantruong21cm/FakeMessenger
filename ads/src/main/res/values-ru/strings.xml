@@ -1,0 +1,11 @@
+<resources>
+
+
+    <string name="rate_msg">Наша команда усердно работает, чтобы сделать лучшее бесплатное приложение. Ваш 5-звездочный отзыв лучше денег. Пожалуйста, напишите хороший отзыв в Google Play, чтобы поддержать меня.</string>
+    <string name="remind_later">Напомнить позже</string>
+    <string name="good_5_stars">Отлично, 5 звёзд</string>
+    <string name="not_good">Не очень хорошо</string>
+    <string name="title_dialog_feed_back">Отправить обратную связь</string>
+    <string name="message_dialog_feed_back">Запросить по электронной почте исправление ошибки и введение новой опции</string>
+    <string name="exit_app">Выход</string>
+</resources>

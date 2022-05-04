@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/style_dialog_full">
+
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bt_container">
+        <ImageView
+            android:background="#ffffff"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="150dip"
+            android:src="@drawable/ic_nz_studio"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+    </FrameLayout>
+
+
+
+
+    <TextView
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rate_msg"
+        android:textColor="@color/text_color"
+        android:fontFamily="@font/roboto_light"
+        android:textSize="@dimen/text_details" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:orientation="horizontal">
+        <TextView
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:id="@+id/btn_good"
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="@dimen/text_details"
+            android:textColor="@color/text_color"
+            android:textAllCaps="true"
+            android:text="@string/good_5_stars"
+            android:background="@drawable/selector_button"/>
+        <TextView
+            android:id="@+id/btn_not_good"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_details"
+            android:textColor="@color/text_color"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/not_good"
+            android:textAllCaps="true"
+            android:background="@drawable/selector_button"/>
+        <TextView
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:id="@+id/btn_late"
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_details"
+            android:textColor="@color/text_color"
+            android:text="@string/remind_later"
+            android:background="@drawable/selector_button"/>
+
+    </LinearLayout>
+</LinearLayout>

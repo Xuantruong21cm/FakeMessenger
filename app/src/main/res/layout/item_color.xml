@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_40sdp"
+    android:layout_height="@dimen/_40sdp"
+    android:layout_margin="@dimen/_5sdp"
+    android:background="?attr/selectableItemBackgroundBorderless">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/im_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_round_0084f0" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/im_selected"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:src="@drawable/ic_check"
+        android:tint="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>
