@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_350sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             app:layout_constraintTop_toBottomOf="@+id/tv_title"
             app:riv_corner_radius_bottom_left="@dimen/_5sdp"
             app:riv_corner_radius_bottom_right="@dimen/_5sdp" />

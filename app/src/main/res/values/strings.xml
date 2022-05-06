@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">FAKE CONVERSATION</string>
+    <string name="app_name">Fancy Dialogue</string>
+    <string name="app_name_des">Fancy Dialogue\nConversation by finger</string>
 
     <string name="share_friends">Share with friends</string>
     <string name="feed_back">Feedback</string>
     <string name="chat">Chat</string>
     <string name="search">Search</string>
     <string name="people">People</string>
+    <string name="story">Stories</string>
     <string name="chats">Chats</string>
     <string name="create_chat">Create Chat</string>
     <string name="create_group">Create Group</string>
@@ -75,4 +77,5 @@
     <string name="policy_for">Privacy Policy For Fake Chats</string>
     <string name="accept_and_continue">Accept and continue</string>
     <string name="exit">Exit</string>
+    <string name="notification">Notification</string>
 </resources>

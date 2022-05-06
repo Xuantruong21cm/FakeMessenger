@@ -14,8 +14,7 @@
         android:layout_height="@dimen/_30sdp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:padding="@dimen/_9sdp"
-        android:src="@drawable/ic_more"
-        android:tint="@color/color_0084f0" />
+        android:src="@drawable/ic_more" />
 
     <LinearLayout
         android:id="@+id/ll_opt"
@@ -38,8 +37,7 @@
             android:layout_height="@dimen/_30sdp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="@dimen/_7sdp"
-            android:src="@drawable/ic_picture"
-            android:tint="@color/color_0084f0" />
+            android:src="@drawable/ic_picture" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/im_record"
@@ -47,8 +45,7 @@
             android:layout_height="@dimen/_30sdp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="@dimen/_7sdp"
-            android:src="@drawable/ic_microphone"
-            android:tint="@color/color_0084f0" />
+            android:src="@drawable/ic_microphone"/>
 
 
     </LinearLayout>
@@ -84,8 +81,7 @@
             android:layout_height="@dimen/_30sdp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="@dimen/_7sdp"
-            android:src="@drawable/ic_emoji"
-            android:tint="@color/color_0084f0" />
+            android:src="@drawable/ic_emoji" />
 
     </LinearLayout>
 
@@ -96,6 +92,5 @@
         android:layout_marginStart="@dimen/_5sdp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:padding="@dimen/_7sdp"
-        android:src="@drawable/ic_like"
-        android:tint="@color/color_0084f0" />
+        android:src="@drawable/ic_like" />
 </LinearLayout>

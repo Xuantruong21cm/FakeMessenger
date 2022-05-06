@@ -108,7 +108,8 @@
         android:layout_height="@dimen/_30sdp"
         android:layout_marginStart="@dimen/_5sdp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:padding="@dimen/_8sdp"
+        android:padding="@dimen/_6sdp"
+        android:rotation="225"
         android:src="@drawable/ic_phone"
         android:tint="@color/color_0084f0" />
 
@@ -119,8 +120,7 @@
         android:layout_marginStart="@dimen/_5sdp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:padding="@dimen/_6sdp"
-        android:src="@drawable/ic_camera_2"
-        android:tint="@color/color_0084f0" />
+        android:src="@drawable/ic_camera_add_2" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/im_infor"

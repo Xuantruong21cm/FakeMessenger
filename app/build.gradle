@@ -7,7 +7,7 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId "com.lubuteam.fakemessenger.fakeconversation"
+        applicationId "com.merryblue.fakemessenger"
         minSdkVersion 21
         targetSdkVersion 30
         vectorDrawables.useSupportLibrary = true
@@ -64,5 +64,7 @@ dependencies {
     /*https://github.com/daimajia/AndroidViewAnimations*/
     implementation 'com.daimajia.easing:library:2.0@aar'
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
+
+    implementation 'com.karumi:dexter:6.2.2'
 
 }

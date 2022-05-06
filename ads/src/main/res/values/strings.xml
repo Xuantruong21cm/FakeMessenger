@@ -11,13 +11,19 @@
 
     // Title mail and email feed back
     <string name="Title_email" translatable="false">Title FeedBack</string>
-    <string name="email_feedback" translatable="false">emailne@gmail.com</string>
+    <string name="email_feedback" translatable="false">admin@merryblue.llc</string>
 
     //Info id admob, you can change
-    <string name="admob_app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="admob_native" translatable="false">/6499/example/native</string>
-    <string name="admob_full" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="admob_banner" translatable="false">/6499/example/banner</string>
+    <string name="admob_app_id" translatable="false">ca-app-pub-3592162878001945~8570330362</string>
+    <string name="admob_native" translatable="false"> ca-app-pub-3592162878001945/3602457600</string>
+    <string name="admob_full" translatable="false">ca-app-pub-3592162878001945/2480947628</string>
+    <string name="admob_banner" translatable="false">ca-app-pub-3592162878001945/2671136423</string>
+
+ //Info id admob, you can change
+    <string name="admob_app_id_test" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_native_test" translatable="false">/6499/example/native</string>
+    <string name="admob_full_test" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_banner_test" translatable="false">/6499/example/banner</string>
 
 
 

@@ -34,23 +34,24 @@
         app:layout_constraintBottom_toBottomOf="@+id/im_avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/im_avatar"
-        android:layout_width="@dimen/_27sdp"
-        android:layout_height="@dimen/_27sdp"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
         android:layout_marginEnd="@dimen/_12sdp"
         android:background="@drawable/bg_round_f1f1f1"
-        android:padding="@dimen/_7sdp"
+        android:padding="@dimen/_6sdp"
         android:src="@drawable/ic_pencil" />
 
     <androidx.appcompat.widget.AppCompatImageView
         app:layout_constraintBottom_toBottomOf="@+id/im_avatar"
         app:layout_constraintEnd_toStartOf="@+id/im_edit"
         app:layout_constraintTop_toTopOf="@+id/im_avatar"
-        android:layout_width="@dimen/_27sdp"
-        android:layout_height="@dimen/_27sdp"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:background="@drawable/bg_round_f1f1f1"
         android:padding="@dimen/_7sdp"
-        android:src="@drawable/ic_camera" />
+        android:src="@drawable/ic_camera"
+        android:tint="@color/black"/>
 
     <LinearLayout
         app:layout_constraintTop_toBottomOf="@+id/im_avatar"

@@ -22,17 +22,14 @@
             android:id="@+id/im_inline"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/_2sdp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_user_default"
-            app:civ_border_color="@color/white"
-            app:civ_border_width="@dimen/_2sdp" />
+            app:civ_border_color="@color/white" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/im_status"
             android:layout_width="@dimen/_12sdp"
             android:layout_height="@dimen/_12sdp"
-            android:layout_margin="@dimen/_1sdp"
             android:src="@drawable/bg_round_55c932"
             app:civ_border_color="@color/white"
             app:civ_border_width="@dimen/_2sdp"

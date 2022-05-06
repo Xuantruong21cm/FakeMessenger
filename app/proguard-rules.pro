@@ -8,4 +8,4 @@
   **[] $VALUES;
   public *;
 }
--keep class com.lubuteam.fakemessenger.fakeconversation.model.** { *; }
+-keep class com.merryblue.fakemessenger.model.** { *; }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "834362285493",
+    "project_id": "fake-messenger-bb385",
+    "storage_bucket": "fake-messenger-bb385.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834362285493:android:d4976edc9c2519f9fd8dfc",
+        "android_client_info": {
+          "package_name": "com.merryblue.fakemessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "834362285493-a98ghnsfmavbceu19qs8gg17u8h4ah40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDVV1ea4EbfgrvBlfD-KPElrw-jl-zfrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "834362285493-a98ghnsfmavbceu19qs8gg17u8h4ah40.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
