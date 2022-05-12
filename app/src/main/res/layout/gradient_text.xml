@@ -5,7 +5,7 @@
 
     <TextView
         android:id="@+id/txt_gradient"
-        android:text="2020"
+        android:text="2022"
         android:textSize="@dimen/_23sdp"
         android:fontFamily="@font/roboto_medium"
         android:layout_width="match_parent"

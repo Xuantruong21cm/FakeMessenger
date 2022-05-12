@@ -57,7 +57,7 @@
             android:shadowColor="#0000"
             android:shadowDy="1"
             android:shadowRadius="2"
-            android:text="2020"
+            android:text="2022"
             android:textAllCaps="true"/>
 
 <!--        <com.airbnb.lottie.LottieAnimationView-->
