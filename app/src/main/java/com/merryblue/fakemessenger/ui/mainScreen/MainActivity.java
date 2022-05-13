@@ -90,7 +90,6 @@ public class MainActivity extends BaseActivity implements IActionMain.IView, Vie
         activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         bottomBinding = activityMainBinding.layoutBottom;
         topBinding = activityMainBinding.layoutTop;
-        checkPermiss();
         return activityMainBinding.getRoot();
     }
 
@@ -161,6 +160,7 @@ public class MainActivity extends BaseActivity implements IActionMain.IView, Vie
             @Override
             public void onClick(View v) {
                 activityMainBinding.guideView.setVisibility(View.GONE);
+                checkPermiss();
             }
         });
 
@@ -170,6 +170,7 @@ public class MainActivity extends BaseActivity implements IActionMain.IView, Vie
 
                 if (currPos == dotscount - 1) {
                     activityMainBinding.guideView.setVisibility(View.GONE);
+                    checkPermiss();
                 } else {
                     activityMainBinding.slideView.setCurrentItem(currPos + 1);
                 }
