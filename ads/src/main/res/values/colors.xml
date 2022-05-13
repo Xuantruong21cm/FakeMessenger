@@ -8,5 +8,5 @@
     <color name="color_white">#ffffffff</color>
     <color name="stocke_card">#5E58595A</color>
 
-    <color name="light_transparent">#16000000</color>
+    <color name="light_transparent">#00000000</color>
 </resources>

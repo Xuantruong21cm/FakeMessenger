@@ -12,7 +12,7 @@ android {
         targetSdkVersion 30
         vectorDrawables.useSupportLibrary = true
         ndk.abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
-        
+
     }
 
     buildTypes {
@@ -29,6 +29,17 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    allprojects {
+        repositories {
+            maven { url "https://jitpack.io" }
+            mavenCentral()
+            maven() {
+                url "https://oss.sonatype.org/content/repositories/snapshots"
+            }
+        }
+    }
+
 }
 
 dependencies {
@@ -64,7 +75,10 @@ dependencies {
     /*https://github.com/daimajia/AndroidViewAnimations*/
     implementation 'com.daimajia.easing:library:2.0@aar'
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
-
+    implementation 'com.github.chhatrasal09:CoachMark:v0.1'
     implementation 'com.karumi:dexter:6.2.2'
-
+    implementation ('com.github.worker8:tourguide:1.0.14-SNAPSHOT@aar'){
+        transitive=true
+    }
+    implementation 'com.koushikdutta.ion:ion:3.1.0'
 }

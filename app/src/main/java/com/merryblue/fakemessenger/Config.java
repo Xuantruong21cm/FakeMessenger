@@ -11,6 +11,8 @@ import com.merryblue.fakemessenger.model.UserMessageModel;
 import java.util.List;
 
 public class Config {
+    public static final String SHOW_SLIDE_HINT = "SHOW_SLIDE_HINT";
+
     public static String CHANNEL_ID = "notification channel";
     public static String NOTIFICATION_ID = "notification id";
     public static String NOTIFICATION_ON = "NOTIFICATION_ON";
