@@ -79,17 +79,14 @@ public class MainActivity extends BaseActivity implements IActionMain.IView, Vie
     private ConversationHorizontalAdapter horizontalAdapter;
     private ConversationVerticalAdapter verticalAdapter;
     public static List<ConversationModel> lstData = new ArrayList<>();
-    public TourGuide mTutorialHandler;
-    private int dotscount;
-    private ImageView[] dots;
-    int currPos;
-    int count = 0;
+
 
     @Override
     protected View getLayoutResource() {
         activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         bottomBinding = activityMainBinding.layoutBottom;
         topBinding = activityMainBinding.layoutTop;
+        checkPermiss();
         return activityMainBinding.getRoot();
     }
 
@@ -104,81 +101,9 @@ public class MainActivity extends BaseActivity implements IActionMain.IView, Vie
         activityMainBinding.rcvVertical.setAdapter(verticalAdapter);
 
 
-        if (PreferencesHelper.getInt(SHOW_SLIDE_HINT, 0) < 3) {
-            initSlideShow();
-            count = PreferencesHelper.getInt(SHOW_SLIDE_HINT, 0) + 1;
-            PreferencesHelper.putInt(SHOW_SLIDE_HINT, count);
-            Log.e("SHOW_SLIDE_HINT", String.valueOf(PreferencesHelper.getInt(SHOW_SLIDE_HINT, 0)));
-        } else activityMainBinding.guideView.setVisibility(View.GONE);
-    }
-
-    private void initSlideShow() {
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(MainActivity.this);
-        activityMainBinding.slideView.setAdapter(viewPagerAdapter);
-
-        activityMainBinding.slideView.setAdapter(viewPagerAdapter);
-        dotscount = viewPagerAdapter.getCount();
-        dots = new ImageView[dotscount];
-
-        for (int i = 0; i < dotscount; i++) {
-
-            dots[i] = new ImageView(this);
-            dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_dot));
-
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-
-            params.setMargins(10, 0, 10, 0);
-
-            activityMainBinding.SliderDots.addView(dots[i], params);
-        }
-        dots[0].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
-        activityMainBinding.slideView.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                currPos = position;
-                for (int i = 0; i < dotscount; i++) {
-                    dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_dot));
-                }
-
-                dots[position].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.nonactive_dot));
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-        currPos = activityMainBinding.slideView.getCurrentItem();
-        activityMainBinding.btnSkip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                activityMainBinding.guideView.setVisibility(View.GONE);
-                checkPermiss();
-            }
-        });
-
-        activityMainBinding.btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (currPos == dotscount - 1) {
-                    activityMainBinding.guideView.setVisibility(View.GONE);
-                    checkPermiss();
-                } else {
-                    activityMainBinding.slideView.setCurrentItem(currPos + 1);
-                }
-                Log.e("currPos == dotscount", String.valueOf(currPos) + " : " + dotscount);
-            }
-        });
 
     }
+
 
 
     @Override
@@ -247,7 +172,7 @@ public class MainActivity extends BaseActivity implements IActionMain.IView, Vie
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.im_avatar:
-                mTutorialHandler.cleanUp();
+//                mTutorialHandler.cleanUp();
                 try {
                     askPermissionStorage(() -> {
                         requestGetGallery(path -> {
@@ -281,25 +206,6 @@ public class MainActivity extends BaseActivity implements IActionMain.IView, Vie
                 case R.id.menu_create_group:
                     showDialogCreateChat(true);
                     break;
-//                case R.id.menu_add_contact:
-//                    try {
-//                        askPermissionContact(() -> {
-//                            requestGetContact((name, image) -> {
-//                                HashMap<String, Object> datas = new HashMap<>();
-//                                datas.put(Config.KEY_TITLE, name);
-//                                datas.put(Config.KEY_AVATAR, image);
-//                                datas.put(Config.KEY_GROUP, false);
-//                                if (presenter != null) {
-//                                    presenter.createConvesation(datas);
-//                                }
-//                            });
-//                            return null;
-//                        });
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                    }
-//
-//                    break;
             }
             return true;
         });
