@@ -86,18 +86,7 @@ public class SplashActivity extends BaseActivity {
 
             } else {
                 splashBinding.guideView.setVisibility(View.GONE);
-                new DialogPolicy.ExtendBuilder()
-                        .onSetPositiveButton(getString(R.string.accept_and_continue), (baseDialog, data) -> {
-                            baseDialog.dismiss();
-                            PreferencesHelper.putBoolean(PreferencesHelper.ACCEPT_POLICY, true);
-                            nextScreen();
-                        })
-                        .onSetNegativeButton(getString(R.string.exit), baseDialog -> {
-                            baseDialog.dismiss();
-                            finishAffinity();
-                        })
-                        .build()
-                        .show(getSupportFragmentManager(), DialogEditProfile.class.getName());
+                initPolicy();
             }
         }, 2000);
     }

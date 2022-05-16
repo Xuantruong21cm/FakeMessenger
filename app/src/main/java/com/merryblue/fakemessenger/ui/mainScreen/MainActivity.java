@@ -328,7 +328,7 @@ public class MainActivity extends BaseActivity implements IActionMain.IView, Vie
         Dexter.withActivity(this).withPermissions("android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE").withListener(new MultiplePermissionsListener() {
             public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
                 multiplePermissionsReport.areAllPermissionsGranted();
-                if (multiplePermissionsReport.isAnyPermissionPermanentlyDenied()) {
+                if (!multiplePermissionsReport.isAnyPermissionPermanentlyDenied()) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                     builder.setTitle((CharSequence) "Change Permissions in Settings");
                     builder.setMessage((CharSequence) "\nClick SETTINGS to Manually Set\nPermissions to use this app").setCancelable(false).setPositiveButton((CharSequence) "SETTINGS", (DialogInterface.OnClickListener) new DialogInterface.OnClickListener() {
