@@ -281,25 +281,25 @@ public class MainActivity extends BaseActivity implements IActionMain.IView, Vie
                 case R.id.menu_create_group:
                     showDialogCreateChat(true);
                     break;
-                case R.id.menu_add_contact:
-                    try {
-                        askPermissionContact(() -> {
-                            requestGetContact((name, image) -> {
-                                HashMap<String, Object> datas = new HashMap<>();
-                                datas.put(Config.KEY_TITLE, name);
-                                datas.put(Config.KEY_AVATAR, image);
-                                datas.put(Config.KEY_GROUP, false);
-                                if (presenter != null) {
-                                    presenter.createConvesation(datas);
-                                }
-                            });
-                            return null;
-                        });
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
-                    break;
+//                case R.id.menu_add_contact:
+//                    try {
+//                        askPermissionContact(() -> {
+//                            requestGetContact((name, image) -> {
+//                                HashMap<String, Object> datas = new HashMap<>();
+//                                datas.put(Config.KEY_TITLE, name);
+//                                datas.put(Config.KEY_AVATAR, image);
+//                                datas.put(Config.KEY_GROUP, false);
+//                                if (presenter != null) {
+//                                    presenter.createConvesation(datas);
+//                                }
+//                            });
+//                            return null;
+//                        });
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    break;
             }
             return true;
         });
