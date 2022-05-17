@@ -329,16 +329,16 @@ public class MainActivity extends BaseActivity implements IActionMain.IView, Vie
             public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
                 multiplePermissionsReport.areAllPermissionsGranted();
                 if (!multiplePermissionsReport.isAnyPermissionPermanentlyDenied()) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setTitle((CharSequence) "Change Permissions in Settings");
-                    builder.setMessage((CharSequence) "\nClick SETTINGS to Manually Set\nPermissions to use this app").setCancelable(false).setPositiveButton((CharSequence) "SETTINGS", (DialogInterface.OnClickListener) new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                            intent.setData(Uri.fromParts("package", MainActivity.this.getPackageName(), (String) null));
-                            MainActivity.this.startActivityForResult(intent, 1000);
-                        }
-                    });
-                    builder.create().show();
+//                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+//                    builder.setTitle((CharSequence) "Change Permissions in Settings");
+//                    builder.setMessage((CharSequence) "\nClick SETTINGS to Manually Set\nPermissions to use this app").setCancelable(false).setPositiveButton((CharSequence) "SETTINGS", (DialogInterface.OnClickListener) new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialogInterface, int i) {
+//                            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+//                            intent.setData(Uri.fromParts("package", MainActivity.this.getPackageName(), (String) null));
+//                            MainActivity.this.startActivityForResult(intent, 1000);
+//                        }
+//                    });
+//                    builder.create().show();
                 }
             }
 
