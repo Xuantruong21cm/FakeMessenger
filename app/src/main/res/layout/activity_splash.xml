@@ -48,7 +48,7 @@
             android:textSize="@dimen/_23sdp"
             android:textStyle="bold" />
 
-        <com.merryblue.fakemessenger.ui.splash.TextGradient
+        <com.vuthaihung.fancydialouge.ui.splash.TextGradient
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dip"
