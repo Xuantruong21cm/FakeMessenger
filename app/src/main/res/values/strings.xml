@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Fancy Dialogue</string>
-    <string name="app_name_des">Fancy Dialogue\nConversation by finger</string>
-
+    <string name="app_name_des">Fake Chat \nMessenger Generator</string>
+    <string name="facebook_app_id">871801587112808</string>
+    <string name="facebook_client_token">8501bd82e59b7c4762e1a993455ffa75</string>
+    <string name="fb_login_protocol_scheme">fb871801587112808</string>
     <string name="share_friends">Share with friends</string>
     <string name="feed_back">Feedback</string>
     <string name="chat">Chat</string>
