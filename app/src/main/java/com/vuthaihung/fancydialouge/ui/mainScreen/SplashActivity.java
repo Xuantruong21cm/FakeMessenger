@@ -1,16 +1,11 @@
-package com.merryblue.fakemessenger.ui.splash;
+package com.vuthaihung.fancydialouge.ui.mainScreen;
 
-import static com.merryblue.fakemessenger.Config.CHANNEL_ID;
-import static com.merryblue.fakemessenger.Config.NOTIFICATION_ON;
-import static com.merryblue.fakemessenger.Config.SHOW_SLIDE_HINT;
+
+import static com.vuthaihung.fancydialouge.Config.SHOW_SLIDE_HINT;
 
 import android.app.AlarmManager;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,22 +14,19 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.ads.control.AdmobHelp;
-import com.merryblue.fakemessenger.BuildConfig;
-import com.merryblue.fakemessenger.R;
-import com.merryblue.fakemessenger.adapter.ViewPagerAdapter;
-import com.merryblue.fakemessenger.databinding.ActivitySplashBinding;
-import com.merryblue.fakemessenger.dialog.DialogEditProfile;
-import com.merryblue.fakemessenger.dialog.DialogPolicy;
-import com.merryblue.fakemessenger.service.NotificationBroadCast;
-import com.merryblue.fakemessenger.ui.BaseActivity;
-import com.merryblue.fakemessenger.ui.mainScreen.MainActivity;
-import com.merryblue.fakemessenger.PreferencesHelper;
+import com.vuthaihung.fancydialouge.BuildConfig;
+import com.vuthaihung.fancydialouge.PreferencesHelper;
+import com.vuthaihung.fancydialouge.R;
+import com.vuthaihung.fancydialouge.adapter.ViewPagerAdapter;
+import com.vuthaihung.fancydialouge.databinding.ActivitySplashBinding;
+import com.vuthaihung.fancydialouge.dialog.DialogEditProfile;
+import com.vuthaihung.fancydialouge.dialog.DialogPolicy;
+import com.vuthaihung.fancydialouge.service.NotificationBroadCast;
+import com.vuthaihung.fancydialouge.ui.BaseActivity;
 
 import java.util.Calendar;
 
@@ -76,6 +68,7 @@ public class SplashActivity extends BaseActivity {
     protected void initView() {
         pr_start = findViewById(R.id.pr_start);
         pr_start.setAnimation(AnimationUtils.loadAnimation(this, R.anim.rotate));
+
         AdmobHelp.getInstance().init(this, BuildConfig.DEBUG, new AdmobHelp.LoadAdsSuccess() {
             @Override
             public void loadAdsSuccess(boolean b) {

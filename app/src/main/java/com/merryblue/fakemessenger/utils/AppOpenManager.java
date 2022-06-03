@@ -17,8 +17,8 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.appopen.AppOpenAd;
-import com.merryblue.fakemessenger.App;
-import com.merryblue.fakemessenger.BuildConfig;
+import com.vuthaihung.fancydialouge.App;
+import com.vuthaihung.fancydialouge.BuildConfig;
 
 import java.util.Date;
 

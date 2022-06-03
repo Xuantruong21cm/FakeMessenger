@@ -1,10 +1,7 @@
 package com.vuthaihung.fancydialouge.service;
 
-import static android.content.Context.ALARM_SERVICE;
 import static com.vuthaihung.fancydialouge.Config.NOTIFICATION_ID;
 
-import android.app.AlarmManager;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -14,10 +11,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.vuthaihung.fancydialouge.R;
-import com.vuthaihung.fancydialouge.ui.mainScreen.MainActivity;
-import com.vuthaihung.fancydialouge.ui.splash.SplashActivity;
-
-import java.util.Calendar;
+import com.vuthaihung.fancydialouge.ui.mainScreen.SplashActivity;
 
 public class NotificationBroadCast extends BroadcastReceiver {
 

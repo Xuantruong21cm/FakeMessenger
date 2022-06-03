@@ -9,6 +9,10 @@
     <string name="message_dialog_feed_back">Request bug fix and implement new features via email</string>
     <string name="exit_app">Exit</string>
 
+    <string name="facebook_app_id">871801587112808</string>
+    <string name="facebook_client_token">8501bd82e59b7c4762e1a993455ffa75</string>
+    <string name="fb_login_protocol_scheme">fb871801587112808</string>
+
     // Title mail and email feed back
     <string name="Title_email" translatable="false">Title FeedBack</string>
     <string name="email_feedback" translatable="false">admin@merryblue.llc</string>
@@ -19,6 +23,7 @@
     <string name="admob_full" translatable="false">ca-app-pub-2670898705339228/3397838231</string>
     <string name="admob_banner" translatable="false">ca-app-pub-2670898705339228/4122379509</string>
     <string name="open_ads" translatable="false">ca-app-pub-2670898705339228/2276328257</string>
+
 
  //Info id admob, you can change
     <string name="admob_app_id_test" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
