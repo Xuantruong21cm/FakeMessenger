@@ -25,6 +25,7 @@ import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.ads.control.AdmobHelp;
+import com.merryblue.fakemessenger.BuildConfig;
 import com.merryblue.fakemessenger.R;
 import com.merryblue.fakemessenger.adapter.ViewPagerAdapter;
 import com.merryblue.fakemessenger.databinding.ActivitySplashBinding;
@@ -75,7 +76,12 @@ public class SplashActivity extends BaseActivity {
     protected void initView() {
         pr_start = findViewById(R.id.pr_start);
         pr_start.setAnimation(AnimationUtils.loadAnimation(this, R.anim.rotate));
-        AdmobHelp.getInstance().init(this);
+        AdmobHelp.getInstance().init(this, BuildConfig.DEBUG, new AdmobHelp.LoadAdsSuccess() {
+            @Override
+            public void loadAdsSuccess(boolean b) {
+
+            }
+        });
         new Handler().postDelayed(() -> {
             splashBinding.guideView.setVisibility(View.VISIBLE);
             if (PreferencesHelper.getInt(SHOW_SLIDE_HINT, 0) < 3) {

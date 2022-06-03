@@ -448,9 +448,11 @@ public class ConversationDetailActivity extends BaseActivity implements IActionD
                     });
                     break;
                 case R.id.menu_add_member:
-                    Intent intent3 = new Intent(this, AddMemberActivity.class);
-                    intent3.putExtra(ConversationDetailActivity.DATA_SELECT, model);
-                    startActivityForResult(intent3, Config.REQUEST_CODE_ACT_MEMBER);
+                    AdmobHelp.getInstance().showInterstitialAd(() -> {
+                        Intent intent3 = new Intent(this, AddMemberActivity.class);
+                        intent3.putExtra(ConversationDetailActivity.DATA_SELECT, model);
+                        startActivityForResult(intent3, Config.REQUEST_CODE_ACT_MEMBER);
+                    });
                     break;
             }
             return true;

@@ -14,10 +14,11 @@
     <string name="email_feedback" translatable="false">admin@merryblue.llc</string>
 
     //Info id admob, you can change
-    <string name="admob_app_id" translatable="false">ca-app-pub-3592162878001945~8570330362</string>
-    <string name="admob_native" translatable="false"> ca-app-pub-3592162878001945/3602457600</string>
-    <string name="admob_full" translatable="false">ca-app-pub-3592162878001945/2480947628</string>
-    <string name="admob_banner" translatable="false">ca-app-pub-3592162878001945/2671136423</string>
+    <string name="admob_app_id" translatable="false">ca-app-pub-2670898705339228~3290953061</string>
+    <string name="admob_native" translatable="false">ca-app-pub-2670898705339228/4519348219</string>
+    <string name="admob_full" translatable="false">ca-app-pub-2670898705339228/3397838231</string>
+    <string name="admob_banner" translatable="false">ca-app-pub-2670898705339228/4122379509</string>
+    <string name="open_ads" translatable="false">ca-app-pub-2670898705339228/2276328257</string>
 
  //Info id admob, you can change
     <string name="admob_app_id_test" translatable="false">ca-app-pub-3940256099942544~3347511713</string>

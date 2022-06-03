@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId "com.merryblue.fakemessenger"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         vectorDrawables.useSupportLibrary = true
         ndk.abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
 
@@ -80,5 +80,10 @@ dependencies {
     implementation ('com.github.worker8:tourguide:1.0.14-SNAPSHOT@aar'){
         transitive=true
     }
+    implementation 'com.google.android.gms:play-services-ads:21.0.0'
     implementation 'com.koushikdutta.ion:ion:3.1.0'
+    def lifecycle_version = "2.0.0"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 }

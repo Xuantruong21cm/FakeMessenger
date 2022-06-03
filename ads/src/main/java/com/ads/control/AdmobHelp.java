@@ -3,6 +3,7 @@ package com.ads.control;
 import android.app.Activity;
 import android.content.Context;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -11,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.gms.ads.AdListener;
@@ -18,24 +20,35 @@ import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.VideoOptions;
-import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
-import com.google.android.gms.ads.doubleclick.PublisherInterstitialAd;
-import com.google.android.gms.ads.formats.MediaView;
-import com.google.android.gms.ads.formats.NativeAdOptions;
-import com.google.android.gms.ads.formats.UnifiedNativeAd;
-import com.google.android.gms.ads.formats.UnifiedNativeAdView;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.google.android.gms.ads.nativead.MediaView;
+import com.google.android.gms.ads.nativead.NativeAd;
+import com.google.android.gms.ads.nativead.NativeAdOptions;
+import com.google.android.gms.ads.nativead.NativeAdView;
+
+import java.lang.ref.WeakReference;
+import java.util.Arrays;
+import java.util.List;
 
 public class AdmobHelp {
     private static AdmobHelp instance;
-    PublisherInterstitialAd mPublisherInterstitialAd;
+    InterstitialAd mInterstitialAd;
+
+    private String popupUnit;
     private AdCloseListener adCloseListener;
     private boolean isReloaded = false;
-    private UnifiedNativeAd nativeAd;
+    public static NativeAd mNativeAd;
 
-    public static long timeLoad=0;
+    public static long timeLoad = 0;
     public static long TimeReload = 60*1000;
+    public static int count = 0;
+    private LoadAdsSuccess loadAdsSuccess;
 
     public static AdmobHelp getInstance() {
         if (instance == null) {
@@ -45,98 +58,145 @@ public class AdmobHelp {
     }
 
     private AdmobHelp() {
-
+        List<String> testDeviceIds = Arrays.asList("685AF7B0FB12253EC1C4D549F5C5DB70");
+        RequestConfiguration configuration =
+                new RequestConfiguration.Builder().setTestDeviceIds(testDeviceIds).build();
+        MobileAds.setRequestConfiguration(configuration);
     }
 
-    public void init(Context context) {
-        MobileAds.initialize(context, context.getString(R.string.admob_app_id));
-        mPublisherInterstitialAd = new PublisherInterstitialAd(context);
-        mPublisherInterstitialAd.setAdUnitId(context.getString(R.string.admob_full));
-        mPublisherInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                // Code to be executed when an ad finishes loading.
-            }
+    public static boolean isDebug = false;
+    private Context mContext;
+    private WeakReference<Activity> activityWeakReference;
 
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                // Code to be executed when an ad request fails.
-                if (isReloaded == false) {
-                    isReloaded = true;
-                    loadInterstitialAd();
-                }
-            }
+    public void init(Context context, boolean isDebuge, LoadAdsSuccess loadAdsSuccess) {
+        AdmobHelp.isDebug = isDebuge;
+        this.mContext = context;
+        this.loadAdsSuccess = loadAdsSuccess;
 
-            @Override
-            public void onAdOpened() {
-                // Code to be executed when the ad is displayed.
-            }
+        RequestConfiguration configuration = new RequestConfiguration.Builder()
+                .setTestDeviceIds(Arrays.asList("685AF7B0FB12253EC1C4D549F5C5DB70", "95E7F255A57F142EC9E0C5EF801A7525"))
+                .build();
+        MobileAds.setRequestConfiguration(configuration);
 
-            @Override
-            public void onAdClicked() {
-                // Code to be executed when the user clicks on an ad.
-            }
+        if (isDebug) {
+            popupUnit = context.getString(R.string.admob_full_test);
+        } else {
+            popupUnit = context.getString(R.string.admob_full);
+        }
 
-            @Override
-            public void onAdLeftApplication() {
-                // Code to be executed when the user has left the app.
-            }
-
-            @Override
-            public void onAdClosed() {
-                // Code to be executed when the interstitial ad is closed.
-                if (adCloseListener != null) {
-                    adCloseListener.onAdClosed();
-                    loadInterstitialAd();
-                }
-            }
-        });
         loadInterstitialAd();
+        AdBannerUtil.getShareIntance().init(context);
+    }
+
+    public void setActivity(Activity activity) {
+        this.activityWeakReference = new WeakReference<Activity>(activity);
     }
 
     private void loadInterstitialAd() {
-        if (mPublisherInterstitialAd != null && !mPublisherInterstitialAd.isLoading() && !mPublisherInterstitialAd.isLoaded()) {
-            PublisherAdRequest adRequest = new PublisherAdRequest.Builder().build();
-            mPublisherInterstitialAd.loadAd(adRequest);
-        }
+        AdRequest adRequest = new AdRequest.Builder().build();
+        InterstitialAd.load(this.mContext, popupUnit, adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        Log.e("DEBUG", "loadInterstitialAd - onAdLoaded");
+                        mInterstitialAd = interstitialAd;
+                        mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                            @Override
+                            public void onAdDismissedFullScreenContent() {
+                                if (adCloseListener != null) {
+                                    adCloseListener.onAdClosed();
+                                    loadInterstitialAd();
+                                }
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        Log.e("DEBUG", "loadInterstitialAd - onAdFailedToLoad - " + loadAdError.getMessage());
+
+                        mInterstitialAd = null;
+                        if (isReloaded == false) {
+                            isReloaded = true;
+                            loadInterstitialAd();
+                        }
+                    }
+                });
     }
 
+
     public void showInterstitialAd(AdCloseListener adCloseListener) {
-        if((timeLoad+TimeReload)<System.currentTimeMillis()){
-            if (canShowInterstitialAd()) {
+        if ((timeLoad + TimeReload) < System.currentTimeMillis() && !AppUtils.isRemoveAds(mContext)) {
+            count = count + 1;
+            if (canShowInterstitialAd() && count == 3) {
+                count = 0;
                 this.adCloseListener = adCloseListener;
-                mPublisherInterstitialAd.show();
+                mInterstitialAd.show(activityWeakReference.get());
                 timeLoad = System.currentTimeMillis();
             } else {
 
                 adCloseListener.onAdClosed();
             }
-        }else{
+        } else {
+            adCloseListener.onAdClosed();
+        }
+
+    }
+
+    public void showInterstitialAdForNow(AdCloseListener adCloseListener) {
+        if ((timeLoad + TimeReload) < System.currentTimeMillis() && !AppUtils.isRemoveAds(mContext)) {
+//            count = count + 1;
+            if (canShowInterstitialAd()) {
+                this.adCloseListener = adCloseListener;
+                mInterstitialAd.show(activityWeakReference.get());
+                timeLoad = System.currentTimeMillis();
+            } else {
+
+                adCloseListener.onAdClosed();
+            }
+        } else {
             adCloseListener.onAdClosed();
         }
 
     }
 
     private boolean canShowInterstitialAd() {
-        return mPublisherInterstitialAd != null && mPublisherInterstitialAd.isLoaded();
+        if (mInterstitialAd == null) {
+            loadInterstitialAd();
+            return false;
+        }
+
+        return mInterstitialAd != null && activityWeakReference != null;
     }
 
     public interface AdCloseListener {
         void onAdClosed();
     }
 
-    public  void loadBanner(final Activity mActivity) {
+    public void loadBanner(final Activity mActivity) {
+        if (AppUtils.isRemoveAds(mActivity)) {
+            return;
+        }
         final ShimmerFrameLayout containerShimmer =
-                (ShimmerFrameLayout) mActivity.findViewById(R.id.shimmer_container);
-
+                mActivity.findViewById(R.id.shimmer_container);
 
         containerShimmer.setVisibility(View.VISIBLE);
         containerShimmer.startShimmer();
-        final LinearLayout adContainer = (LinearLayout) mActivity.findViewById(R.id.banner_container);
+        final LinearLayout adContainer = mActivity.findViewById(R.id.banner_container);
 
         try {
-            AdView  adView = new AdView(mActivity);
-            adView.setAdUnitId(mActivity.getString(R.string.admob_banner));
+            AdView adView = new AdView(mActivity);
+            String bannerID = mActivity.getString(R.string.admob_banner);
+            if (isDebug) {
+                bannerID = mActivity.getString(R.string.admob_banner_test);
+            }
+            adView.setAdUnitId(bannerID);
+            Log.e("BANNER", "Banner ID: " + bannerID);
+
+
             adContainer.addView(adView);
             AdSize adSize = getAdSize(mActivity);
             // Step 4 - Set the adaptive ad size on the ad view.
@@ -146,18 +206,20 @@ public class AdmobHelp {
             adView.loadAd(new AdRequest.Builder().build());
             adView.setAdListener(new AdListener() {
                 @Override
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
+                public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                    super.onAdFailedToLoad(loadAdError);
+                    Log.e("BANNER", "onAdFailedToLoad: " + loadAdError.getMessage());
                     adContainer.setVisibility(View.GONE);
                     containerShimmer.stopShimmer();
                     containerShimmer.setVisibility(View.GONE);
                 }
+
                 @Override
-                public void  onAdLoaded(){
+                public void onAdLoaded() {
+                    Log.e("BANNER", "onAdLoaded");
                     containerShimmer.stopShimmer();
                     containerShimmer.setVisibility(View.GONE);
                     adContainer.setVisibility(View.VISIBLE);
-
 
                 }
             });
@@ -166,6 +228,11 @@ public class AdmobHelp {
         } catch (Exception e) {
         }
     }
+
+    public interface LoadAdsSuccess {
+        void loadAdsSuccess(boolean b);
+    }
+
 
     private AdSize getAdSize(Activity mActivity) {
         // Step 2 - Determine the screen width (less decorations) to use for the ad width.
@@ -182,7 +249,8 @@ public class AdmobHelp {
         return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(mActivity, adWidth);
 
     }
-    public  void loadBannerFragment(final Activity mActivity,final View rootView) {
+
+    public void loadBannerFragment(final Activity mActivity, final View rootView) {
         final ShimmerFrameLayout containerShimmer =
                 (ShimmerFrameLayout) rootView.findViewById(R.id.shimmer_container);
 
@@ -191,8 +259,12 @@ public class AdmobHelp {
         final LinearLayout adContainer = (LinearLayout) rootView.findViewById(R.id.banner_container);
 
         try {
-            AdView  adView = new AdView(mActivity);
-            adView.setAdUnitId(mActivity.getString(R.string.admob_banner));
+            AdView adView = new AdView(mActivity);
+            if (isDebug) {
+                adView.setAdUnitId(mActivity.getString(R.string.admob_banner_test));
+            } else {
+                adView.setAdUnitId(mActivity.getString(R.string.admob_banner));
+            }
             adContainer.addView(adView);
             AdSize adSize = getAdSize(mActivity);
             // Step 4 - Set the adaptive ad size on the ad view.
@@ -202,19 +274,18 @@ public class AdmobHelp {
             adView.loadAd(new AdRequest.Builder().build());
             adView.setAdListener(new AdListener() {
                 @Override
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
+                public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                    super.onAdFailedToLoad(loadAdError);
                     adContainer.setVisibility(View.GONE);
                     containerShimmer.stopShimmer();
                     containerShimmer.setVisibility(View.GONE);
                 }
+
                 @Override
-                public void  onAdLoaded(){
+                public void onAdLoaded() {
                     containerShimmer.stopShimmer();
                     containerShimmer.setVisibility(View.GONE);
                     adContainer.setVisibility(View.VISIBLE);
-
-
                 }
             });
 
@@ -223,7 +294,10 @@ public class AdmobHelp {
         }
     }
 
-    public void loadNative(final Activity mActivity){
+    public void loadNative(final Activity mActivity) {
+        if (AppUtils.isRemoveAds(mActivity)) {
+            return;
+        }
         final ShimmerFrameLayout containerShimmer =
                 (ShimmerFrameLayout) mActivity.findViewById(R.id.shimmer_container);
         containerShimmer.setVisibility(View.VISIBLE);
@@ -237,34 +311,39 @@ public class AdmobHelp {
                 .build();
 
 
-        AdLoader adLoader = new AdLoader.Builder(mActivity, mActivity.getString(R.string.admob_native))
-                .forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
+        String nativeUnitAd = mActivity.getString(R.string.admob_native);
+        if (isDebug) {
+            nativeUnitAd = "/6499/example/native";
+        }
+
+        Log.e("#loadNative", " - nativeUnitAd -  " + nativeUnitAd);
+        AdLoader adLoader = new AdLoader.Builder(mActivity, nativeUnitAd)
+                .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
                     @Override
-                    public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd) {
-                        // Show the ad.
-                        if (nativeAd != null) {
-                            nativeAd.destroy();
+                    public void onNativeAdLoaded(NativeAd nativeAd) {
+                        if (mNativeAd != null) {
+                            mNativeAd.destroy();
                         }
                         containerShimmer.stopShimmer();
                         containerShimmer.setVisibility(View.GONE);
 
-                        nativeAd = unifiedNativeAd;
+                        mNativeAd = nativeAd;
                         FrameLayout frameLayout =
                                 mActivity.findViewById(R.id.fl_adplaceholder);
-                        if(frameLayout!=null){
+
+                        if (frameLayout != null) {
                             frameLayout.setVisibility(View.VISIBLE);
-                            UnifiedNativeAdView adView = (UnifiedNativeAdView) mActivity.getLayoutInflater()
+                            NativeAdView adView = (NativeAdView) mActivity.getLayoutInflater()
                                     .inflate(R.layout.native_admob_ad, null);
-                            populateUnifiedNativeAdView(unifiedNativeAd, adView);
+                            populateUnifiedNativeAdView(nativeAd, adView);
                             frameLayout.removeAllViews();
                             frameLayout.addView(adView);
                         }
-
                     }
                 })
                 .withAdListener(new AdListener() {
                     @Override
-                    public void onAdFailedToLoad(int errorCode) {
+                    public void onAdFailedToLoad(LoadAdError adError) {
                         // Handle the failure by logging, altering the UI, and so on.
                         containerShimmer.stopShimmer();
                         containerShimmer.setVisibility(View.GONE);
@@ -273,9 +352,14 @@ public class AdmobHelp {
                 .withNativeAdOptions(adOptions)
                 .build();
 
-        adLoader.loadAd(new PublisherAdRequest.Builder().build());
+        adLoader.loadAd(new AdRequest.Builder().build());
     }
-    public void loadNativeFragment(final Activity mActivity,final View rootView){
+
+    public void loadNativeFragment(final Activity mActivity, final View rootView) {
+        if (AppUtils.isRemoveAds(mActivity)) {
+            return;
+        }
+
         final ShimmerFrameLayout containerShimmer =
                 (ShimmerFrameLayout) rootView.findViewById(R.id.shimmer_container);
         containerShimmer.setVisibility(View.VISIBLE);
@@ -288,26 +372,31 @@ public class AdmobHelp {
                 .setVideoOptions(videoOptions)
                 .build();
 
+        String nativeUnitAd = mActivity.getString(R.string.admob_native);
+        if (isDebug) {
+//            nativeUnitAd = mActivity.getString(R.string.native_test);
+            nativeUnitAd = "/6499/example/native";
+        }
 
-        AdLoader adLoader = new AdLoader.Builder(mActivity, mActivity.getString(R.string.admob_native))
-                .forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
+        AdLoader adLoader = new AdLoader.Builder(mActivity, nativeUnitAd)
+                .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
                     @Override
-                    public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd) {
+                    public void onNativeAdLoaded(NativeAd nativeAd) {
                         // Show the ad.
-                        if (nativeAd != null) {
-                            nativeAd.destroy();
+                        if (mNativeAd != null) {
+                            mNativeAd.destroy();
                         }
                         containerShimmer.stopShimmer();
                         containerShimmer.setVisibility(View.GONE);
 
-                        nativeAd = unifiedNativeAd;
+                        mNativeAd = nativeAd;
                         FrameLayout frameLayout =
                                 rootView.findViewById(R.id.fl_adplaceholder);
-                        if(frameLayout!=null){
+                        if (frameLayout != null) {
                             frameLayout.setVisibility(View.VISIBLE);
-                            UnifiedNativeAdView adView = (UnifiedNativeAdView) mActivity.getLayoutInflater()
+                            NativeAdView adView = (NativeAdView) mActivity.getLayoutInflater()
                                     .inflate(R.layout.native_admob_ad, null);
-                            populateUnifiedNativeAdView(unifiedNativeAd, adView);
+                            populateUnifiedNativeAdView(nativeAd, adView);
                             frameLayout.removeAllViews();
                             frameLayout.addView(adView);
                         }
@@ -316,7 +405,8 @@ public class AdmobHelp {
                 })
                 .withAdListener(new AdListener() {
                     @Override
-                    public void onAdFailedToLoad(int errorCode) {
+                    public void onAdFailedToLoad(LoadAdError adError) {
+                        // Handle the failure by logging, altering the UI, and so on.
                         // Handle the failure by logging, altering the UI, and so on.
                         containerShimmer.stopShimmer();
                         containerShimmer.setVisibility(View.GONE);
@@ -325,10 +415,10 @@ public class AdmobHelp {
                 .withNativeAdOptions(adOptions)
                 .build();
 
-        adLoader.loadAd(new PublisherAdRequest.Builder().build());
+        adLoader.loadAd(new AdRequest.Builder().build());
     }
-    private void populateUnifiedNativeAdView(UnifiedNativeAd nativeAd, UnifiedNativeAdView adView) {
 
+    private void populateUnifiedNativeAdView(NativeAd nativeAd, NativeAdView adView) {
 
         MediaView mediaView = adView.findViewById(R.id.ad_media);
         adView.setMediaView(mediaView);
@@ -406,9 +496,10 @@ public class AdmobHelp {
         adView.setNativeAd(nativeAd);
 
     }
-    public void destroyNative(){
-        if (nativeAd != null) {
-            nativeAd.destroy();
+
+    public void destroyNative() {
+        if (mNativeAd != null) {
+            mNativeAd.destroy();
         }
     }
 }

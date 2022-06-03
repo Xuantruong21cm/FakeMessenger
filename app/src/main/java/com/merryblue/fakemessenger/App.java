@@ -7,11 +7,14 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
 
+import com.merryblue.fakemessenger.utils.AppOpenManager;
+
 import io.realm.Realm;
 
 public class App extends Application {
 
     private static App instance;
+    private AppOpenManager appOpenManager;
 
     public static App getInstace() {
         if (instance == null)
@@ -29,6 +32,8 @@ public class App extends Application {
         if (instance == null)
             setInstance(App.this);
         PreferencesHelper.init(this);
+        appOpenManager = new AppOpenManager(this);
+        appOpenManager.fetchAd();
         createNotificationChannel();
         Realm.init(this);
     }
