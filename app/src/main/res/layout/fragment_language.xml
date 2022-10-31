@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <data>
+    <variable
+        name="viewModel"
+        type="com.merryblue.fakemessenger.ui.intro.language.LanguageViewModel"
+        />
+  </data>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/backgroundContainer"
+      android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/languageBannerAds"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_height="@dimen/_56sdp"
+        android:background="@color/white"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/languageRv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingBottom="@dimen/_1sdp"
+        android:background="@color/backgroundRecycler"
+        />
+
+    <FrameLayout
+        android:id="@+id/languageNativeAds"
+        android:layout_width="match_parent"
+        android:layout_height="302dp"
+        android:background="@color/gray600"
+        />
+  </LinearLayout>
+
+</layout>

@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Téléchargeur Video</string>
+
+    <string name="next">Prochain</string>
+
+    <string name="txt_language_en">Anglais</string>
+    <string name="txt_language_vi">Vietnamien</string>
+    <string name="txt_language_spanish">Espagnol</string>
+    <string name="txt_language_portuguese">Portugais</string>
+    <string name="txt_language_russiane">Russe</string>
+    <string name="txt_language_ja">Japonais</string>
+    <string name="txt_language_korean">Coréen</string>
+    <string name="txt_language_french">Français</string>
+    <string name="txt_language_german">Allemand</string>
+    <string name="txt_language_chi">Chinois</string>
+
+    <string name="skip">Sauter</string>
+    <string name="setting">Paramètre</string>
+    <string name="privacy">Intimité</string>
+    <string name="txt_download">Télécharger</string>
+    <string name="txt_language">Langue</string>
+    <string name="txt_yc_connection_internet">Connectez-vous au réseau pour continuer</string>
+    <string name="txt_home">"page d'accueil"</string>
+    <string name="privacy_policy">When you use our services, you’re trusting us with your information. We understand this is a big responsibility and work hard to protect your information and put you in control. This Privacy Policy is meant to help you understand what information we collect, why we collect it, and how you can update, manage, export, and delete your information.</string>
+
+</resources>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/actionPopupContent"
+    android:paddingBottom="@dimen/dimen16"
+    >
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@id/nativeAdsViewPopup"
+    android:id="@+id/pop_up_container"
+    android:background="@drawable/bg_chooser_pop_up"
+    android:layout_marginStart="@dimen/dimen16"
+    android:layout_marginTop="@dimen/dimen16"
+    android:layout_marginEnd="@dimen/dimen16"
+    android:elevation="@dimen/dimen4"
+    android:orientation="vertical"
+    tools:ignore="UselessParent"
+    >
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <TextView
+        android:id="@+id/tv_title"
+        style="@style/ChooserDialogBoldFont"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen56"
+        android:layout_marginBottom="@dimen/dimen3"
+        android:gravity="center"
+        android:textColor="@color/colorDarkGray"
+        android:background="@drawable/bg_accent_top_radius"
+        android:textSize="@dimen/text_size14"
+        tools:text="Title"
+        />
+
+      <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen10"
+        style="@style/ChooserDialogRegularFont"
+        android:gravity="center"
+        android:textColor="@color/colorGray"
+        android:textSize="@dimen/text_size13"
+        android:visibility="gone"
+        tools:text="Sub Title : Hint"
+        />
+
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/dimen10"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_chooser_action"
+        />
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+  <FrameLayout
+      android:id="@+id/nativeAdsViewPopup"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/dimen16"
+      android:layout_marginBottom="@dimen/dimen16"
+      android:background="@drawable/bg_chooser_pop_up"
+      android:layout_marginEnd="@dimen/dimen16"
+      android:layout_alignParentBottom="true"/>
+
+  <TextView
+    android:id="@+id/btn_close"
+    style="@style/ChooserDialogBoldFont"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen50"
+    android:layout_alignParentBottom="true"
+    android:layout_gravity="center"
+    android:layout_marginStart="@dimen/dimen16"
+    android:layout_marginEnd="@dimen/dimen16"
+    android:text="@string/action_close"
+    android:layout_marginBottom="@dimen/dimen16"
+    android:background="@drawable/btn_action_chooser"
+    android:gravity="center"
+    android:textColor="@color/colorDarkGray"
+    android:visibility="gone"
+    android:textSize="@dimen/text_size13"
+    />
+
+</RelativeLayout>

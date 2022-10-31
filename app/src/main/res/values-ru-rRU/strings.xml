@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Загрузчик с Facebook</string>
+
+    <string name="next">Следующий</string>
+
+    <string name="txt_language_en">Английский</string>
+    <string name="txt_language_vi">Вьетнамский</string>
+    <string name="txt_language_spanish">Испанский</string>
+    <string name="txt_language_portuguese">Португальский</string>
+    <string name="txt_language_russiane">Русский</string>
+    <string name="txt_language_ja">Японский</string>
+    <string name="txt_language_korean">Корейский</string>
+    <string name="txt_language_french">Французский</string>
+    <string name="txt_language_german">Немецкий</string>
+    <string name="txt_language_chi">Китайский Язык</string>
+
+    <string name="skip">Пропускать</string>
+    <string name="setting">Параметр</string>
+    <string name="privacy">Конфиденциальность</string>
+    <string name="txt_download">Скачать</string>
+    <string name="txt_language">Язык</string>
+    <string name="txt_yc_connection_internet">Подключитесь к сети, чтобы продолжить</string>
+    <string name="txt_home">домашняя страница</string>
+    <string name="privacy_policy">When you use our services, you’re trusting us with your information. We understand this is a big responsibility and work hard to protect your information and put you in control. This Privacy Policy is meant to help you understand what information we collect, why we collect it, and how you can update, manage, export, and delete your information.</string>
+
+</resources>

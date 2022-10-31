@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Descargador de Facebook</string>
+
+    <string name="next">próximo</string>
+
+    <string name="txt_language_en">Inglés</string>
+    <string name="txt_language_vi">Vietnamita</string>
+    <string name="txt_language_spanish">Español</string>
+    <string name="txt_language_portuguese">Portugués</string>
+    <string name="txt_language_russiane">Ruso</string>
+    <string name="txt_language_ja">Japonés</string>
+    <string name="txt_language_korean">Coreano</string>
+    <string name="txt_language_french">Francés</string>
+    <string name="txt_language_german">Alemán</string>
+    <string name="txt_language_chi">Chino</string>
+
+    <string name="skip">Saltar</string>
+    <string name="setting">Ajuste</string>
+    <string name="privacy">Privacidad</string>
+    <string name="txt_download">Descargar</string>
+    <string name="txt_language">Idioma</string>
+    <string name="txt_yc_connection_internet">Conéctese a la red para continuar</string>
+    <string name="txt_home">Página de inicio</string>
+    <string name="privacy_policy">When you use our services, you’re trusting us with your information. We understand this is a big responsibility and work hard to protect your information and put you in control. This Privacy Policy is meant to help you understand what information we collect, why we collect it, and how you can update, manage, export, and delete your information.</string>
+
+</resources>

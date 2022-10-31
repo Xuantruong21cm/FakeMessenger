@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="data"
+            type="org.app.data.model.LanguageModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/dimen16">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/flagImage"
+            android:layout_width="@dimen/dimen56"
+            android:layout_height="@dimen/dimen56"
+            android:layout_marginTop="@dimen/dimen15"
+            android:layout_marginBottom="@dimen/dimen19"
+            app:layout_constraintBottom_toTopOf="@id/divider2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            app:imageResource="@{data.flags}"
+            app:shapeAppearanceOverlay="@style/CircleImageView"/>
+
+        <TextView
+            style="@style/Text400"
+            android:id="@+id/languageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@{data.language}"
+            android:textSize="@dimen/text_size14"
+            android:textColor="@color/toolbarTitleColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/flagImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/rightImage"
+            android:layout_width="@dimen/dimen24"
+            android:layout_height="@dimen/dimen24"
+            android:src="@drawable/ic_tick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="@{data.selected ? View.VISIBLE : View.GONE }"
+            />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flagImage"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

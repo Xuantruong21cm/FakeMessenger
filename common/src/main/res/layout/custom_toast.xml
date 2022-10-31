@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/toastNoInternet"
+    android:paddingBottom="@dimen/dimen26">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen16"
+        android:layout_marginEnd="@dimen/dimen16"
+        android:background="@drawable/bg_dialog_no_internet"
+        android:gravity="center_vertical"
+        android:minHeight="56dp"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen18"
+        tools:ignore="UselessParent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_common_error" />
+
+        <TextView
+            android:id="@+id/tvContent"
+            style="@style/Text500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen10"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/no_internet_connection_title"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </LinearLayout>
+</RelativeLayout>

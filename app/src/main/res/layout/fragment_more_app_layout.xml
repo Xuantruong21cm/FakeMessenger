@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.merryblue.fakemessenger.ui.moreapp.MoreAppViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundRecycler"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/flNativeAd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@color/white">
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/styleContentFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/_16sdp"
+                android:text="Loading ads.."
+                android:textColor="@color/colorButtonDisable" />
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_other_app"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="10"
+            tools:listitem="@layout/item_other_app" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

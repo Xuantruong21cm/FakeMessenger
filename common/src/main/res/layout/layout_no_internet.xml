@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white">
+
+<LinearLayout
+    android:id="@+id/layoutNoInternet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F7"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_no_internet" />
+
+    <TextView
+        android:id="@+id/mTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen20"
+        android:text="@string/no_internet_connection_title"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/mContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen20"
+        android:layout_marginTop="@dimen/dimen20"
+        android:text="@string/no_internet_connection_content"
+        android:textAlignment="center"
+        android:textColor="#993C3C43"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btRetry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen20"
+        android:layout_marginTop="@dimen/dimen26"
+        android:background="@drawable/bg_button_ripple"
+        android:text="@string/retry"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
+</LinearLayout>

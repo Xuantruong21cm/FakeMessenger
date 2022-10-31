@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_drawer"
+    app:startDestination="@+id/navDrawerHome">
+
+    <fragment
+        android:id="@+id/navDrawerHome"
+        android:name="com.merryblue.fakemessenger.ui.home.HomeFragment"
+        android:label="@string/txt_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navDrawerHome_to_purchaseFragment"
+            app:destination="@id/purchaseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/language"
+        android:name="com.merryblue.fakemessenger.ui.intro.language.LanguageFragment"
+        android:label="@string/txt_language"
+        tools:layout="@layout/fragment_language" >
+        <argument
+            android:name="source"
+            app:argType="string"
+            android:defaultValue="navigation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moreApp"
+        android:name="com.merryblue.fakemessenger.ui.moreapp.MoreAppFragment"
+        android:label="@string/txt_menu_more_app"
+        tools:layout="@layout/fragment_more_app_layout" />
+
+    <fragment
+        android:id="@+id/feedback"
+        android:name="com.merryblue.fakemessenger.ui.home.HomeFragment"
+        android:label="@string/txt_menu_rate_feedback"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/privacy"
+        android:name="com.merryblue.fakemessenger.ui.policy.PolicyFragment"
+        android:label="@string/privacy"
+        tools:layout="@layout/fragment_policy_layout" />
+    <fragment
+        android:id="@+id/purchaseFragment"
+        android:name="com.merryblue.fakemessenger.ui.purchase.PurchaseFragment"
+        android:label="PurchaseFragment"
+        tools:layout="@layout/fragment_purchase"/>
+</navigation>

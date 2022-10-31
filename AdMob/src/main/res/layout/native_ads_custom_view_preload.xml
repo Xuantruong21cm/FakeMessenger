@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:maxHeight="300dp"
+  android:padding="8dp">
+
+  <ImageView
+    android:id="@+id/native_ads_preload_icon_view"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+  <TextView
+    android:id="@+id/native_ads_preload_text_view"
+    android:layout_width="wrap_content"
+    android:visibility="gone"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:background="@android:color/holo_green_dark"
+    android:padding="2dp"
+    android:text="Ad"
+    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+    android:textColor="@android:color/white"
+    app:layout_constraintBottom_toBottomOf="@+id/native_ads_preload_title"
+    app:layout_constraintStart_toEndOf="@+id/native_ads_preload_icon_view"
+    app:layout_constraintTop_toTopOf="@+id/native_ads_preload_title" />
+
+  <FrameLayout
+    android:id="@+id/native_ads_preload_options_view"
+    android:layout_width="25dp"
+    android:layout_height="25dp"
+    android:layout_marginBottom="8dp"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toTopOf="@+id/native_ads_preload_body"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toEndOf="@+id/native_ads_preload_title"
+    app:layout_constraintTop_toTopOf="@+id/native_ads_preload_icon_view" />
+
+  <TextView
+    android:id="@+id/native_ads_preload_title"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+    android:textColor="#9E9E9E"
+    app:layout_constraintStart_toEndOf="@+id/native_ads_preload_text_view"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    tools:text="Title" />
+
+  <TextView
+    android:id="@+id/native_ads_preload_body"
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:textColor="#9E9E9E"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginHorizontal="8dp"
+    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+    app:layout_constraintBottom_toBottomOf="@+id/native_ads_preload_icon_view"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toEndOf="@+id/native_ads_preload_icon_view"
+    app:layout_constraintTop_toBottomOf="@+id/native_ads_preload_title"
+    tools:text="Advertiser" />
+
+  <TextView
+    android:id="@+id/native_ads_preload_advertiser"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    android:layout_marginTop="8dp"
+    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/native_ads_preload_icon_view"
+    tools:text="Body" />
+
+  <FrameLayout
+    android:id="@+id/native_ads_preload_media_container"
+    android:layout_width="0dp"
+    android:layout_height="150dp"
+    android:layout_marginTop="4dp"
+    android:maxHeight="150dp"
+    android:visibility="gone"
+    app:layout_constraintDimensionRatio="W,16:9"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/native_ads_preload_body" />
+
+  <Button
+    android:id="@+id/native_ads_preload_cta_button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:backgroundTint="#F1C40E"
+    android:textColor="@android:color/white"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/native_ads_preload_icon_view"
+    tools:layout_editor_absoluteX="8dp"
+    tools:text="Install" />
+</androidx.constraintlayout.widget.ConstraintLayout>

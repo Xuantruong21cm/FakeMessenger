@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="placeHolder"
+            type="Integer" />
+
+        <variable
+            name="errorHolder"
+            type="Integer" />
+
+        <variable
+            name="otherApp"
+            type="com.merryblue.fakemessenger.data.model.OtherAppModel" />
+
+        <variable
+            name="listener"
+            type="com.merryblue.fakemessenger.ui.moreapp.MoreAppAdapter.ItemOtherAppListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        app:onSingleClick="@{view->listener.onOpenStore(otherApp)}">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/image_view_other_app"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:adjustViewBounds="true"
+            app:errorHolder="@{errorHolder}"
+            app:isCircle="@{false}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:placeHolder="@{placeHolder}"
+            app:shapeAppearanceOverlay="@style/rounded_corner"
+            app:url="@{otherApp.icon}"
+            tools:src="@drawable/ic_app_logo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_view_download"
+            android:layout_width="@dimen/_42sdp"
+            android:layout_height="@dimen/_42sdp"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_download_app"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_title_app"
+            style="@style/TextBoldFont"
+            android:layout_width="@dimen/spacing_zero"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textSize="@dimen/_14sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:textColor="@color/color111111"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/image_view_download"
+            app:layout_constraintStart_toEndOf="@+id/image_view_other_app"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{otherApp.name}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_style_app"
+            android:layout_width="@dimen/spacing_zero"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color5F6168"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            app:layout_constraintEnd_toStartOf="@+id/image_view_download"
+            app:layout_constraintStart_toEndOf="@+id/image_view_other_app"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_title_app"
+            android:text="@{otherApp.categoryName}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_view_size_app"
+            android:layout_width="@dimen/spacing_zero"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color5F6168"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            app:layout_constraintEnd_toStartOf="@+id/image_view_download"
+            app:layout_constraintStart_toEndOf="@+id/image_view_other_app"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_style_app"
+            android:text="@{otherApp.size}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/spacing_zero"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@color/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_size_app" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

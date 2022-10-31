@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Trình tải xuống Video</string>
+
+    <string name="next">Tiếp theo</string>
+
+    <string name="txt_language_en">Tiếng Anh</string>
+    <string name="txt_language_vi">Tiếng Việt</string>
+    <string name="txt_language_spanish">Tiếng Tây Ban Nha</string>
+    <string name="txt_language_portuguese">Tiếng Bồ Đào Nha</string>
+    <string name="txt_language_russiane">Tiếng Nga</string>
+    <string name="txt_language_ja">Tiếng Nhật</string>
+    <string name="txt_language_korean">Tiếng Hàn</string>
+    <string name="txt_language_french">Tiếng Pháp</string>
+    <string name="txt_language_german">Tiếng Đức</string>
+    <string name="txt_language_chi">Tiếng Trung Quốc</string>
+
+    <string name="skip">Nhảy</string>
+    <string name="setting">Cài đặt</string>
+    <string name="privacy">Sự riêng tư</string>
+    <string name="txt_download">Tải xuống</string>
+    <string name="txt_language">Ngôn ngữ</string>
+    <string name="txt_yc_connection_internet">Kết nối mạng để thực hiện tiếp</string>
+    <string name="txt_home">Trang chủ</string>
+    <string name="privacy_policy">When you use our services, you’re trusting us with your information. We understand this is a big responsibility and work hard to protect your information and put you in control. This Privacy Policy is meant to help you understand what information we collect, why we collect it, and how you can update, manage, export, and delete your information.</string>
+
+</resources>

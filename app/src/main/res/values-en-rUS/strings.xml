@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Facebook Downloader</string>
+
+    <string name="next">Next</string>
+
+    <string name="txt_language_en">English</string>
+    <string name="txt_language_vi">Vietnamese</string>
+    <string name="txt_language_spanish">Spanish</string>
+    <string name="txt_language_portuguese">Portuguese</string>
+    <string name="txt_language_russiane">Russian</string>
+    <string name="txt_language_ja">Japanese</string>
+    <string name="txt_language_korean">Korean</string>
+    <string name="txt_language_french">French</string>
+    <string name="txt_language_german">German</string>
+    <string name="txt_language_chi">Chinese</string>
+
+    <string name="skip">Skip</string>
+    <string name="setting">Setting</string>
+    <string name="privacy">Privacy</string>
+    <string name="txt_download">Download</string>
+    <string name="txt_language">Language</string>
+    <string name="txt_yc_connection_internet">Connect to the network to continue</string>
+    <string name="txt_home">Home</string>
+    <string name="privacy_policy">When you use our services, you’re trusting us with your information. We understand this is a big responsibility and work hard to protect your information and put you in control. This Privacy Policy is meant to help you understand what information we collect, why we collect it, and how you can update, manage, export, and delete your information.</string>
+
+</resources>

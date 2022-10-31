@@ -1,45 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="color_0084f0">#0084f0</color>
-    <color name="color_303030">#303030</color>
-    <color name="color_353535">#353535</color>
-    <color name="colorPrimary_10">#1A1976D2</color>
-
-    <color name="white">#ffffff</color>
-    <color name="white_10">#1AFFFFFF</color>
-    <color name="white_20">#33FFFFFF</color>
-    <color name="white_30">#4DFFFFFF</color>
-    <color name="white_40">#66FFFFFF</color>
-    <color name="white_50">#80FFFFFF</color>
-    <color name="white_60">#99FFFFFF</color>
-    <color name="white_70">#B3FFFFFF</color>
-    <color name="white_80">#CCFFFFFF</color>
-    <color name="white_90">#E6FFFFFF</color>
-
-    <!---->
-    <color name="black">#000000</color>
-    <color name="black_10">#1A000000</color>
-    <color name="black_20">#33000000</color>
-    <color name="black_30">#4D000000</color>
-    <color name="black_40">#66000000</color>
-    <color name="black_50">#80000000</color>
-    <color name="black_60">#99000000</color>
-    <color name="black_70">#B3000000</color>
-    <color name="black_80">#CC000000</color>
-    <color name="black_90">#E6000000</color>
-    <color name="color_aaaaaa">#aaaaaa</color>
-    <color name="color_7c7c7c">#7C7C7C</color>
-    <color name="color_ea263e">#ea263e</color>
-    <color name="color_ba2033">#BA2033</color>
-    <color name="color_222222">#222222</color>
-    <color name="color_a0a0a0">#a0a0a0</color>
-    <color name="color_f2f2f2">#f2f2f2</color>
-    <color name="color_f1f1f1">#f1f1f1</color>
-    <color name="color_e8e8e8">#e8e8e8</color>
-    <color name="color_8c8b90">#8c8b90</color>
-    <color name="color_717171">#717171</color>
-    <color name="color_d5d5dd">#d5d5dd</color>
-    <color name="color_333333">#333333</color>
-    <color name="color_55c932">#55c932</color>
+  <color name="colorPrimary">#0463CA</color>
+  <color name="colorPrimaryDark">#102B46</color>
+  <color name="colorAccent">#F1C40E</color>
+  <color name="colorAccentDark">#024302</color>
+  <color name="black">#000000</color>
+  <color name="darkGray">#727272</color>
+  <color name="gray">#BCBCBC</color>
+  <color name="lightGray">#E3E3E3</color>
+  <color name="white">#FFFFFF</color>
+  <color name="transparent">#00FFFFFF</color>
+  <color name="blue">#2CB6FD</color>
+  <color name="red">#e20404</color>
+  <color name="backgroundGray">#FAFAFA</color>
+  <color name="backgroundDarkGray">#E1E1E1</color>
+  // New for facebook download app
+  <color name="backgroundContainer">#D9D9D9</color>
+  <color name="backgroundRecycler">#ECF0F5</color>
+  <color name="toolbarTitleColor">#1F2937</color>
+  <color name="divider">#E6E6E6</color>
+    <color name="color808080">#808080</color>
+  <color name="color5F6168">#5F6168</color>
+  <color name="gray600">#4B5563</color>
 </resources>

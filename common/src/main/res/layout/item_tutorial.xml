@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="center"
+  android:orientation="vertical"
+  >
+
+  <TextView
+    android:id="@+id/tv_title"
+    style="@style/TutorialTitleFont"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dimen2"
+    android:gravity="center"
+    android:textColor="@color/colorDarkGray"
+    />
+
+  <TextView
+    android:id="@+id/tv_content"
+    style="@style/TutorialContentFont"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen2"
+    android:layout_marginBottom="@dimen/dimen10"
+    android:gravity="center"
+    android:textColor="@color/colorGray"
+    />
+
+  <ImageView
+    android:id="@+id/iv_image"
+    android:layout_width="@dimen/dimen320"
+    android:layout_height="@dimen/dimen320"
+    android:visibility="gone"
+    android:layout_marginTop="@dimen/dimen10"
+    android:layout_marginHorizontal="12dp"
+    tools:ignore="ContentDescription"
+    />
+
+  <FrameLayout
+    android:id="@+id/introAnimationLayout"
+    android:layout_width="@dimen/dimen320"
+    android:layout_height="@dimen/dimen320"
+    android:layout_marginTop="@dimen/dimen10"
+    android:layout_marginHorizontal="12dp" >
+
+    <com.airbnb.lottie.LottieAnimationView
+      android:id="@+id/aniView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:adjustViewBounds="true"
+      app:lottie_loop="true"
+      app:lottie_autoPlay="true"
+      tools:ignore="ContentDescription"/>
+
+    <TextView
+      android:id="@+id/tv_anim_title"
+      style="@style/AnimationContentFont"
+      android:layout_width="wrap_content"
+      android:maxWidth="@dimen/dimen56"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:textAlignment="center"
+      android:lines="2"
+      android:ellipsize="end"
+      android:elevation="@dimen/dimen20"
+      android:textColor="@color/colorDarkGray" />
+  </FrameLayout>
+
+  <com.airbnb.lottie.LottieAnimationView
+    android:id="@+id/ani_vote_view"
+    android:layout_width="@dimen/dimen320"
+    android:layout_height="42dp"
+    android:adjustViewBounds="true"
+    app:lottie_loop="true"
+    app:lottie_autoPlay="true"
+    android:visibility="gone"
+    tools:ignore="ContentDescription"/>
+
+</LinearLayout>

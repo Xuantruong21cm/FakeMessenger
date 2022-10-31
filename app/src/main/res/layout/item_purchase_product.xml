@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="data"
+            type="org.app.data.model.InAppProductModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:cardMaxElevation="10dp"
+        app:contentPadding="@dimen/_24sdp"
+        android:paddingVertical="@dimen/_16sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/productTitle"
+                style="@style/styleDrawerHeaderProTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Monthly package"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size16"
+                app:layout_constraintBottom_toTopOf="@+id/productSubtitle"
+                app:layout_constraintEnd_toStartOf="@+id/productPriceTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/productPriceTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1$"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_24"
+                app:layout_constraintBottom_toTopOf="@+id/productTime"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/productTitle" />
+
+            <TextView
+                android:id="@+id/productSubtitle"
+                style="@style/styleDrawerHeaderProDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="center"
+                android:text="Get Premim privileges for 1 month."
+                android:textSize="@dimen/text_size12"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorButtonDisable"
+                />
+
+            <TextView
+                android:id="@+id/productTime"
+                style="@style/styleDrawerHeaderProDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/productSubtitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:gravity="center"
+                android:text="/Year"
+                android:textSize="@dimen/text_size12"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorButtonDisable"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

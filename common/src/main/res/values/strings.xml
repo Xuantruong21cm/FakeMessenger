@@ -1,0 +1,27 @@
+<resources>
+  <!-- General Strings -->
+  <string name="app_name" translatable="false">Easy Interview</string>
+  <string name="hide">Hide</string>
+  <string name="connection_error">Connection Error</string>
+  <string name="no_internet">No internet connection please try again later</string>
+  <string name="retry">Retry</string>
+  <string name="cancel">Cancel</string>
+  <string name="some_error">Some error occurred, try again later</string>
+  <string name="list_no_result">Sorry, There are no results here!</string>
+
+  <string name="dot" translatable="false">•</string>
+  <string name="open_app">Explore APP</string>
+  <string name="next">Next</string>
+  <string name="action_close">Close</string>
+  <string name="list_empty">Danh sách trống</string>
+  <string name="msg_notification_empty">Không tồn tại thông báo nào trong danh sách.</string>
+  <string name="no_internet_connection_title">Không có kết nối mạng</string>
+  <string name="has_internet_connection_title">Đã có kết nối mạng</string>
+  <string name="no_internet_connection_content">Xin vui lòng kiểm tra lại mạng để tiếp tục sử dụng</string>
+  <string name="common_title_error_internet">Không tải được dữ liệu</string>
+  <string name="common_content_error_internet">Vui lòng thử lại hoặc kiểm tra lại đường truyền</string>
+  <string name="agree">Đồng ý</string>
+    <string name="no_data">Not data yet!</string>
+    <string name="download">Download</string>
+
+</resources>

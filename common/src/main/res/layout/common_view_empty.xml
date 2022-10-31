@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="description"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutEmptyCommon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2F2F7"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen20">
+
+        <ImageView
+            android:id="@+id/mImgEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/img_empty"
+            app:layout_constraintBottom_toTopOf="@id/mTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/mTitle"
+            style="@style/Text500"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen16"
+            android:gravity="center"
+            android:text="@{title}"
+            android:textAlignment="center"
+            android:textColor="#FF000000"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:visibility="@{title == null ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/list_empty" />
+
+        <TextView
+            android:id="@+id/mDescription"
+            style="@style/Text400"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen6"
+            android:layout_marginBottom="@dimen/dimen100"
+            android:gravity="center"
+            android:text="@{description}"
+            android:textAlignment="center"
+            android:textSize="13sp"
+            android:visibility="@{description == null ? View.GONE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTitle"
+            tools:text="@string/msg_notification_empty" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="org.app.common.utils.SingleLiveEvent"/>
+
+        <variable
+            name="viewModel"
+            type="com.merryblue.fakemessenger.ui.intro.intro.IntroViewModel"
+            />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/introPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/backgroundGray"
+            android:saveEnabled="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen45"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@{viewModel.currentPage == 0 ? @color/colorPrimary : @color/divider}"
+                android:textSize="@dimen/text_size_24"
+                android:text="@string/dot"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen4"
+                android:textSize="@dimen/text_size_24"
+                android:textColor="@{viewModel.currentPage == 1 ? @color/colorPrimary : @color/divider}"
+                android:text="@string/dot"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen44"
+            android:layout_marginTop="@dimen/dimen8"
+            android:paddingHorizontal="@dimen/dimen16"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/styleCommonActiveButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen44"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:clickable="true"
+                android:gravity="center"
+                android:textColor="@color/colorButtonDisable"
+                android:text="@{viewModel.currentPage == 0 ? @string/skip : @string/txt_intro_previous}"
+                onSingleClick="@{view->viewModel.onPrevious()}"
+                />
+
+            <TextView
+                style="@style/styleCommonActiveButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen44"
+                android:layout_marginStart="@dimen/dimen16"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="@string/next"
+                onSingleClick="@{view->viewModel.onNext()}"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

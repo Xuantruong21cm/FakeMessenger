@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">페이스북 다운로더</string>
+
+    <string name="next">다음</string>
+
+    <string name="txt_language_en">영어</string>
+    <string name="txt_language_vi">베트남어</string>
+    <string name="txt_language_spanish">스페인의</string>
+    <string name="txt_language_portuguese">포르투갈 인</string>
+    <string name="txt_language_russiane">러시아인</string>
+    <string name="txt_language_ja">일본어</string>
+    <string name="txt_language_korean">한국인</string>
+    <string name="txt_language_french">프랑스 국민</string>
+    <string name="txt_language_german">독일 사람</string>
+    <string name="txt_language_chi">중국인</string>
+
+    <string name="skip">건너뛰다</string>
+    <string name="setting">환경</string>
+    <string name="privacy">은둔</string>
+    <string name="txt_download">다운로드</string>
+    <string name="txt_language">언어</string>
+    <string name="txt_yc_connection_internet">계속하려면 네트워크에 연결하세요.</string>
+    <string name="txt_home">홈페이지</string>
+    <string name="privacy_policy">When you use our services, you’re trusting us with your information. We understand this is a big responsibility and work hard to protect your information and put you in control. This Privacy Policy is meant to help you understand what information we collect, why we collect it, and how you can update, manage, export, and delete your information.</string>
+
+</resources>

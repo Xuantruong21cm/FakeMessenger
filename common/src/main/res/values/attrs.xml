@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="CircularProgressBar">
+    <attr name="cpb_progress" format="integer" />
+    <attr name="cpb_progress_max" format="integer" />
+    <attr name="cpb_indeterminate_mode" format="boolean" />
+    <attr name="cpb_progressbar_color" format="color" />
+    <attr name="cpb_progressbar_color_start" format="color" />
+    <attr name="cpb_progressbar_color_end" format="color" />
+    <attr name="cpb_progressbar_color_direction">
+      <flag name="left_to_right" value="1" />
+      <flag name="right_to_left" value="2" />
+      <flag name="top_to_bottom" value="3" />
+      <flag name="bottom_to_top" value="4" />
+    </attr>
+    <attr name="cpb_background_progressbar_color" format="color" />
+    <attr name="cpb_background_progressbar_color_start" format="color" />
+    <attr name="cpb_background_progressbar_color_end" format="color" />
+    <attr name="cpb_background_progressbar_color_direction">
+      <flag name="left_to_right" value="1" />
+      <flag name="right_to_left" value="2" />
+      <flag name="top_to_bottom" value="3" />
+      <flag name="bottom_to_top" value="4" />
+    </attr>
+    <attr name="cpb_progressbar_width" format="dimension" />
+    <attr name="cpb_background_progressbar_width" format="dimension" />
+    <attr name="cpb_round_border" format="boolean" />
+    <attr name="cpb_start_angle" format="float" />
+    <attr name="cpb_progress_direction">
+      <flag name="to_right" value="1" />
+      <flag name="to_left" value="2" />
+    </attr>
+  </declare-styleable>
+
+  <declare-styleable name="RecyclerViewPullRefresh">
+    <attr name="isRefresh" format='boolean' />
+    <attr name="isLoadMore" format="boolean" />
+
+
+  </declare-styleable>
+
+  <declare-styleable name="ActionBarView">
+    <attr name="action_bar_left_icon" format="reference" />
+    <attr name="action_bar_left_label" format="string" />
+    <attr name="action_bar_right_icon" format="reference" />
+    <attr name="action_bar_center_label" format="string" />
+    <attr name="action_bar_text_color" format="color" />
+    <attr name="action_bar_icon_left_color" format="color" />
+    <attr name="action_bar_icon_right_color" format="color" />
+  </declare-styleable>
+
+  <declare-styleable name="MyCustomRecyclerView">
+    <attr name="rv_clip_to_padding" format="boolean" />
+    <attr name="rv_padding_end" format="dimension" />
+    <attr name="rv_padding_top" format="dimension" />
+    <attr name="rv_padding_start" format="dimension" />
+    <attr name="rv_padding_bottom" format="dimension" />
+    <attr name="rv_padding_horizontal" format="dimension" />
+    <attr name="rv_padding" format="dimension" />
+    <attr name="rv_padding_vertical" format="dimension" />
+    <attr name="rv_split_motion_events" format="boolean" />
+    <attr name="rv_placeholder_text" format="string" />
+    <attr name="rv_placeholder_text_size" format="dimension" />
+    <attr name="useShimmer" format="boolean" />
+    <attr name="rv_need_to_show_placeholder" format="boolean" />
+  </declare-styleable>
+
+  <declare-styleable name="ViewGroupHandlerLayout">
+    <attr name="text_title_empty" format="string" />
+    <attr name="text_content_empty" format="string" />
+    <attr name="text_img_empty" format="reference" />
+  </declare-styleable>
+
+  <declare-styleable name="CustomTextInputEdittext">
+    <attr name="enableEmoji" format="boolean" />
+  </declare-styleable>
+
+  <declare-styleable name="LoadingButton">
+    <attr name="colorProgressLoading" format="color" />
+    <attr name="colorFail" format="color" />
+    <attr name="colorDone" format="color" />
+    <attr name="drawableDone" format="reference" />
+    <attr name="drawableFail" format="reference" />
+  </declare-styleable>
+
+  <declare-styleable name="LoadingAVLViewButton">
+    <attr name="color_progress" format="color" />
+    <attr name="text" format="string" />
+    <attr name="text_color" format="color" />
+    <attr name="text_size" format="dimension" />
+  </declare-styleable>
+
+  <declare-styleable name="TextViewCustomer">
+    <attr name="txt_number" format="string"/>
+    <attr name="txt_title" format="string"/>
+  </declare-styleable>
+
+
+  <declare-styleable name="ToolBar">
+    <attr name="title" />
+    <attr name="android:gravity" />
+    <attr name="backIcon" format="reference" />
+    <attr name="tintColor" format="color" />
+    <attr name="title_text_size" format="dimension" />
+    <attr name="padding_menu_item" format="dimension" />
+    <attr name="apply_tint_for_menu_item" format="boolean" />
+  </declare-styleable>
+</resources>
