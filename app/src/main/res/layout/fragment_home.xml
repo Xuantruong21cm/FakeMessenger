@@ -1,17 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.merryblue.fakemessenger.ui.home.HomeFragment">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_myself_root"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="360:88"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_myself"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.9111"
+                app:layout_constraintDimensionRatio="328:40"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_my_avatar"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintWidth_percent="0.1111"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:src="@drawable/avatar_test"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    app:layout_constraintStart_toEndOf="@+id/img_my_avatar"
+                    app:layout_constraintTop_toTopOf="@+id/img_my_avatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_my_name"
+                    android:text="Welecome Back"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:textAppearance="@style/StyleContent12"
+                    android:textColor="@color/color4B5563"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_my_name"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:text="Xuân Trường 21"
+                    android:textAppearance="@style/StyleContent14"
+                    android:textColor="@color/color1F2937"
+                    android:textStyle="bold"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    app:layout_constraintStart_toEndOf="@+id/img_my_avatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_my_avatar"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_status"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_container_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:text="Halo" />
-    </FrameLayout>
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/cl_myself_root"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <FrameLayout
+            android:id="@+id/fl_home_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

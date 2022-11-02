@@ -1,5 +1,5 @@
 object Versions {
-  const val gradleVersion = "7.0.2"
+  const val gradleVersion = "7.0.4"
   const val kotlin = "1.7.0"
   const val ktLint = "10.2.0"
 
@@ -8,7 +8,7 @@ object Versions {
 
   // Support
   const val appcompat = "1.5.1"
-  const val coreKtx = "1.9.0"
+  const val coreKtx = "1.8.0"
   const val supportVersion = "1.0.0"
 
   // Arch Components
@@ -36,9 +36,9 @@ object Versions {
 
   // Utils
   const val playServices = "19.2.0"
-  const val localization = "1.1.4"
+  const val localization = "1.5.1"
   const val multidex = "2.0.1"
-  const val permissions = "3.0.0-RC4"
+  const val permissions = "1.7.1"
 
   // Hilt
   const val hiltVersion = "2.42"
@@ -64,8 +64,17 @@ object Versions {
   const val eventBus = "3.3.1"
 
   //sdp
-  const val sdp = "1.1.0"
+  const val sdpAndroid = "1.1.0"
+  const val sspAndroid = "1.1.0"
 
   const val googleService = "4.3.14"
   const val crashlytics = "2.9.2"
+
+  //Exoplayer
+  const val exoplayer = "2.18.1"
+
+  //CameraX
+  const val cameraX = "1.1.0"
+
+
 }

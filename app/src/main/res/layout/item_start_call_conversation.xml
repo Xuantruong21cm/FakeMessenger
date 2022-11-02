@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/transparent">
+
+     <View
+        android:id="@+id/view_start_call_conversation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_icon_toolbar_chats"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.619047" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_add_conversation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_start_call"
+        app:layout_constraintStart_toStartOf="@+id/view_start_call_conversation"
+        app:layout_constraintEnd_toEndOf="@+id/view_start_call_conversation"
+        app:layout_constraintTop_toTopOf="@+id/view_start_call_conversation"
+        app:layout_constraintBottom_toBottomOf="@+id/view_start_call_conversation"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_create_conversation_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:gravity="center"
+        android:text="@string/txt_create_new"
+        android:textAppearance="@style/StyleContent14"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_6sdp"
+        app:layout_constraintStart_toStartOf="@+id/view_start_call_conversation"
+        app:layout_constraintEnd_toEndOf="@+id/view_start_call_conversation"
+        app:layout_constraintTop_toBottomOf="@+id/view_start_call_conversation"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

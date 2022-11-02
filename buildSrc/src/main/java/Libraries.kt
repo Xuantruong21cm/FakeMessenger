@@ -46,7 +46,6 @@ object Libraries {
   const val playServices = "com.google.android.gms:play-services-auth:${Versions.playServices}"
   const val localization = "com.zeugmasolutions.localehelper:locale-helper-android:${Versions.localization}"
   const val multidex = "androidx.multidex:multidex:${Versions.multidex}"
-  const val permissions = "com.afollestad.assent:core:${Versions.permissions}"
 
   // Hilt
   const val hilt = "com.google.dagger:hilt-android:${Versions.hiltVersion}"
@@ -73,12 +72,23 @@ object Libraries {
   const val scalarConverter =
     "com.squareup.retrofit2:converter-scalars:${Versions.scalarConverter}"
 
-  const val sdpAndroid = "com.intuit.sdp:sdp-android:1.1.0"
-  const val sspAndroid = "com.intuit.ssp:ssp-android:1.1.0"
+  const val sdpAndroid = "com.intuit.sdp:sdp-android:${Versions.sdpAndroid}"
+  const val sspAndroid = "com.intuit.ssp:ssp-android:${Versions.sspAndroid}"
  
   //eventbus
   const val eventBus = "org.greenrobot:eventbus:${Versions.eventBus}"
 
-  //sdp
-  const val sdp = "com.intuit.sdp:sdp-android:${Versions.sdp}"
+  //Permission
+  const val permissions = "com.guolindev.permissionx:permissionx:${Versions.permissions}"
+
+  //Exoplayer
+  const val exoplayer = "com.google.android.exoplayer:exoplayer:${Versions.exoplayer}"
+
+  //CameraX
+  const val cameraXCore = "androidx.camera:camera-core:${Versions.cameraX}"
+  const val camera2 = "androidx.camera:camera-camera2:${Versions.cameraX}"
+  const val cameraXLifecycle = "androidx.camera:camera-lifecycle:${Versions.cameraX}"
+  const val cameraXView = "androidx.camera:camera-view:${Versions.cameraX}"
+
+
 }

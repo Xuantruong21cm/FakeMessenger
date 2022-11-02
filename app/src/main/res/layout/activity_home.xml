@@ -4,29 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
-  <androidx.drawerlayout.widget.DrawerLayout
-      android:id="@+id/drawer_layout"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:fitsSystemWindows="true"
-      tools:openDrawer="start">
-
-      <include
-          android:id="@+id/app_bar_main"
-          layout="@layout/app_bar_main"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent" />
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
+    <FrameLayout
+        android:id="@+id/layout_Home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="@dimen/dimen24"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/menu_drawer" >
-    </com.google.android.material.navigation.NavigationView>
-  </androidx.drawerlayout.widget.DrawerLayout>
+        android:layout_height="match_parent"/>
 
 </layout>

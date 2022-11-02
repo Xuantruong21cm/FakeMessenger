@@ -109,9 +109,6 @@ dependencies {
   implementation(Libraries.coil)
   implementation(Libraries.xrecyclerview)
 
-  // Utils
-  implementation(Libraries.permissions)
-
   // Map
   implementation(Libraries.map)
   implementation(Libraries.playServicesLocation)
@@ -125,16 +122,24 @@ dependencies {
   // Lottie
   implementation(Libraries.lottie)
 
+  // dimens
+  implementation(Libraries.sdpAndroid)
+  implementation(Libraries.sspAndroid)
 
+  //Exoplayer
+  implementation(Libraries.exoplayer)
+
+  //CameraX
+  implementation(Libraries.cameraXCore)
+  implementation(Libraries.camera2)
+  implementation(Libraries.cameraXLifecycle)
+  implementation(Libraries.cameraXView)
 
   //Facebook
   //Debug:    tlECJSgCKpFNV15c7LmHseIzaww=
   //Release:  gjJG2Eu3XTcXm/ewy5UY9ozdXis=
   //          /lMHw5u2HOcBv31gWKmoYhY/wmU=
   implementation("com.facebook.android:facebook-android-sdk:latest.release")
-
-  // request perrmistion
-  implementation("com.guolindev.permissionx:permissionx:1.6.4")
 
   // android networking
   implementation ("com.amitshekhar.android:android-networking:1.0.2")

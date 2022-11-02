@@ -55,4 +55,28 @@
     <string name="txt_purchase_update_pro_desc2" translatable="false">No ADS</string>
     <string name="txt_purchase_update_pro_desc3" translatable="false">Fast Downloads</string>
     <string name="txt_purchase_update_pro_continue" translatable="false">Continue</string>
+
+    <string name="txt_nav_fakemessenger_chats">Chats</string>
+    <string name="txt_nav_fakemessenger_calls">Calls</string>
+    <string name="txt_nav_fakemessenger_people">People</string>
+    <string name="txt_create_new">Create New</string>
+    <string name="txt_start_your_conversations">Start your conversations</string>
+    <string name="txt_last_conversation">Last Conversation</string>
+    <string name="txt_more_apps">More Apps</string>
+    <string name="txt_contact_label">Contact</string>
+    <string name="txt_search">Search</string>
+    <string name="txt_make_video_call">Make video call</string>
+    <string name="txt_make_voice_call">Make voice call</string>
+    <string name="txt_incomming_call">Incomming call</string>
+    <string name="txt_calling">Calling</string>
+    <string name="txt_photo_of_incomming_video_call">Photo of incomming video call  </string>
+    <string name="txt_name">Name</string>
+    <string name="txt_decline">DECLINE</string>
+    <string name="txt_answer">ANSWER</string>
+    <string name="txt_reply">REPLY</string>
+    <string name="txt_video_call_on_messenger">Video call on messenger</string>
+    <string name="txt_voice_call_on_messenger">Voice call on messenger</string>
+    <string name="txt_permission_denied_message">The app needs permission to work</string>
+
+    <string name="video_test">asset:///idol.mp4</string>
 </resources>

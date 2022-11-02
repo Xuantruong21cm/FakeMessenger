@@ -15,6 +15,7 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -230,5 +231,16 @@ abstract class BaseActivity<VB : ViewDataBinding> : AppCompatActivity() {
 
   fun showToastNoInternet() {
     toastNoInternet?.show()
+  }
+
+  fun replaceFragment(fragment: Fragment, resId : Int ) {
+    supportFragmentManager.beginTransaction().setCustomAnimations(
+      R.anim.enter_from_right,
+      R.anim.exit_to_left,
+      R.anim.enter_from_left,
+      R.anim.exit_to_right)
+      .replace(resId, fragment)
+      .addToBackStack(fragment::class.simpleName)
+      .commit()
   }
 }

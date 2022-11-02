@@ -1,9 +1,11 @@
 package org.app.common.extensions
 
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,9 +24,20 @@ import coil.load
 import coil.request.ImageRequest
 import coil.transform.CircleCropTransformation
 import coil.transform.RoundedCornersTransformation
+import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestBuilder
+import com.bumptech.glide.load.MultiTransformation
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.bumptech.glide.load.resource.bitmap.FitCenter
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.snackbar.Snackbar
 import org.app.common.R
 import org.app.common.utils.SafeClickListener
+import java.io.File
 import java.lang.reflect.ParameterizedType
 
 fun View.show() {
@@ -278,4 +291,62 @@ fun View.doOnViewDrawnRepeat(removeCallbackBy: (() -> Boolean) = { true }, onDra
     }
   }
   viewTreeObserver.addOnGlobalLayoutListener(global)
+}
+
+
+//Extension by XuanTruong
+
+private fun ImageView.glideLoadImage(requestBuilder: RequestBuilder<Drawable>, type: ImageViewType, cornerRadius: Float = 5f) {
+  scaleType = ImageView.ScaleType.CENTER_CROP
+  val option = requestBuilder.diskCacheStrategy(DiskCacheStrategy.ALL)
+  when (type) {
+    ImageViewType.CIRCLE -> {
+      option.transition(DrawableTransitionOptions.withCrossFade())
+        .transform(CircleCrop())
+        .into(this)
+    }
+    ImageViewType.HRECT, ImageViewType.VRECT, ImageViewType.SQUARE -> {
+      val opt = if (cornerRadius > 0) {
+        RequestOptions().transform(CenterCrop(), RoundedCorners(dipToPix(cornerRadius, context).toInt()))
+      } else {
+        RequestOptions().transform(CenterCrop())
+      }
+      option.apply(opt).into(this)
+    }
+    else -> {
+      requestBuilder.diskCacheStrategy(DiskCacheStrategy.ALL).transform(FitCenter()).into(this)
+    }
+  }
+}
+
+fun ImageView.loadImageAsset(path: String, type: ImageViewType, cornerRadius: Float = 5f) {
+  glideLoadImage(Glide.with(this).load(Uri.parse("file:///android_asset/$path")), type, cornerRadius)
+}
+
+fun ImageView.loadImageFile(f: File, type: ImageViewType, cornerRadius: Float = 5f) {
+  glideLoadImage(Glide.with(this).load(f), type, cornerRadius)
+}
+
+fun ImageView.loadImageFilePath(path: String, type: ImageViewType, cornerRadius: Float = 5f) {
+  glideLoadImage(Glide.with(this).load(File(path)), type, cornerRadius)
+}
+
+fun ImageView.loadImageRes(resId : Int, type: ImageViewType, cornerRadius: Float = 5f) {
+  glideLoadImage(Glide.with(this).load(resId), type, cornerRadius)
+}
+
+fun ImageView.loadImageUrl(url: String, type: ImageViewType, cornerRadius: Float = 5f) {
+  glideLoadImage(Glide.with(this).load(url), type, cornerRadius)
+}
+
+fun ImageView.loadImageUri(url: Uri, type: ImageViewType, cornerRadius: Float = 5f) {
+  glideLoadImage(Glide.with(this).load(url), type, cornerRadius)
+}
+
+fun ImageView.loadImageBitmap(bm: Bitmap, type: ImageViewType, cornerRadius: Float = 5f) {
+  glideLoadImage(Glide.with(this).load(bm), type, cornerRadius)
+}
+
+enum class ImageViewType {
+  NONE, CIRCLE, HRECT, VRECT, SQUARE
 }

@@ -60,8 +60,7 @@ dependencies {
 
   // Utils
   implementation(Libraries.playServices)
-  implementation(Libraries.localization)
-  implementation(Libraries.permissions)
+  //implementation(Libraries.localization)
   implementation(Libraries.gson)
 
   // dimens
@@ -111,13 +110,13 @@ dependencies {
   implementation(project(Config.Modules.admob))
 
   // request perrmistion
-  implementation("com.guolindev.permissionx:permissionx:1.6.4")
+  implementation(Libraries.permissions)
 
   //event bus
   implementation(Libraries.eventBus)
 
-  //sdp
-  implementation(Libraries.sdp)
+  //localehelper
+  implementation(Libraries.localization)
 
   androidTestImplementation("androidx.test.ext:junit:1.1.3")
 }

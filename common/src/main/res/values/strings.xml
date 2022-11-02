@@ -21,7 +21,10 @@
   <string name="common_title_error_internet">Không tải được dữ liệu</string>
   <string name="common_content_error_internet">Vui lòng thử lại hoặc kiểm tra lại đường truyền</string>
   <string name="agree">Đồng ý</string>
-    <string name="no_data">Not data yet!</string>
-    <string name="download">Download</string>
+  <string name="no_data">Not data yet!</string>
+  <string name="download">Download</string>
+
+  <string name="txt_core_base_on_permission">This app uses these permissions</string>
+  <string name="txt_grant_permission_manual">You need to allow necessary permissions in Settings manually</string>
 
 </resources>

@@ -15,8 +15,10 @@ import android.os.SystemClock
 import android.provider.MediaStore
 import android.provider.Settings.Secure
 import android.text.TextUtils
+import android.util.DisplayMetrics
 import android.util.Patterns
 import android.view.View
+import android.view.WindowInsets
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -130,20 +132,28 @@ class SafeClickListener(
     }
 }
 
-fun requestPermissionX(
-    fragmentActivity: FragmentActivity, message: String,
+fun requestPermission(
+    fragmentActivity: FragmentActivity,
+    messageDenied: String,
+    vararg permissions : String,
     requestSuccess: () -> Unit
 ) {
     PermissionX.init(fragmentActivity)
         .permissions(
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.READ_EXTERNAL_STORAGE
+            listOf(*permissions)
         )
-        .request { allGranted, _, _ ->
+        .explainReasonBeforeRequest()
+        .onExplainRequestReason{scope, deniedList ->
+            scope.showRequestReasonDialog(deniedList,fragmentActivity.getString(R.string.txt_core_base_on_permission),"OK","Cancel")
+        }
+        .onForwardToSettings{ scope, deniedList ->
+            scope.showForwardToSettingsDialog(deniedList,fragmentActivity.getString(R.string.txt_grant_permission_manual),"OK","Cancel")
+        }
+        .request { allGranted, grantedList, deniedList ->
             if (allGranted) {
                 requestSuccess.invoke()
             } else {
-                Toast.makeText(fragmentActivity, message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(fragmentActivity, messageDenied, Toast.LENGTH_SHORT).show()
             }
         }
 }
@@ -272,3 +282,56 @@ data class DataSave(
     var path: String? = "",
     var contentValues: ContentValues?
 )
+
+fun getScreenWidth(context: Activity): Int {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        val windowMetrics = context.windowManager.currentWindowMetrics
+        val insets = windowMetrics.windowInsets.getInsetsIgnoringVisibility(WindowInsets.Type.systemBars())
+        windowMetrics.bounds.width() - insets.left - insets.right
+    } else {
+        val displayMetrics = DisplayMetrics()
+        context.windowManager.defaultDisplay.getMetrics(displayMetrics)
+        displayMetrics.widthPixels
+    }
+}
+
+fun getScreenHeight(context: Activity): Int {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        val windowMetrics = context.windowManager.currentWindowMetrics
+        val insets = windowMetrics.windowInsets.getInsetsIgnoringVisibility(WindowInsets.Type.systemBars())
+        windowMetrics.bounds.height() - insets.bottom - insets.top
+    } else {
+        val displayMetrics = DisplayMetrics()
+        @Suppress("DEPRECATION")
+        context.windowManager.defaultDisplay.getMetrics(displayMetrics)
+        displayMetrics.heightPixels
+    }
+}
+
+fun padding16(context: Activity) : Int{
+    return (getScreenWidth(context) * 0.0444444).toInt()
+}
+
+fun padding12(context: Activity) : Int{
+    return (getScreenWidth(context) *  0.0333333).toInt()
+}
+
+fun padding8(context: Activity) : Int{
+    return (getScreenWidth(context) * 0.0222222).toInt()
+}
+
+fun padding6(context: Activity) : Int{
+    return (getScreenWidth(context) * 0.0166666).toInt()
+}
+
+fun padding24(context: Activity) : Int{
+    return (getScreenWidth(context) * 0.0666666).toInt()
+}
+
+fun padding28(context: Activity) : Int{
+    return (getScreenWidth(context) * 0.0777777).toInt()
+}
+
+fun padding48(context: Activity) : Int{
+    return (getScreenWidth(context) * 0.1333333).toInt()
+}
