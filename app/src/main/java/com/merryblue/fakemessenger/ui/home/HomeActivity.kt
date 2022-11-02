@@ -18,7 +18,7 @@ import org.app.common.BaseActivity
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
   override fun setUpViews() {
-    replaceFragment(HomeFragment(),R.id.layout_Home)
+      replaceFragment(HomeFragment(),R.id.layout_Home)
   }
 
   override

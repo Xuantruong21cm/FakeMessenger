@@ -30,6 +30,6 @@ enum class SupportedLanguage(val value: String) {
             DE -> LanguageModel(context.getString(R.string.txt_language_german), isSelected, "de", R.drawable.flag_gr)
         }
 
-        return return LanguageModel(context.getString(R.string.txt_language_en), false, "en", R.drawable.flag_en)
+        return LanguageModel(context.getString(R.string.txt_language_en), false, "en", R.drawable.flag_en)
     }
 }

@@ -10,7 +10,7 @@
     <item name="colorSecondaryVariant">@color/colorPrimary</item>
     <item name="colorOnSecondary">@color/white</item>
     <!-- Status bar color. -->
-    <!--    <item name="android:statusBarColor">@color/transparent</item>-->
+<!--    <item name="android:statusBarColor">@color/transparent</item>-->
     <!-- App Font -->
     <item name="fontFamily">@font/roboto_medium</item>
     <item name="android:windowContentTransitions">true</item>
