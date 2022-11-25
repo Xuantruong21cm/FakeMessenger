@@ -1,6 +1,7 @@
 package com.merryblue.fakemessenger.ui.home
 
 import android.Manifest
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -87,8 +88,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 super.onFakeVideoCall()
 
                 //Fake data, fake type call , Chưa ghép fragment Pick Image - Video
-                requestPermission(requireActivity(),getString(R.string.txt_permission_denied_message)
-                    ,Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.CAMERA, requestSuccess = {
+                requestPermission(requireActivity(),
+                    getString(R.string.txt_permission_denied_message),
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) Manifest.permission.READ_MEDIA_IMAGES else Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.CAMERA,
+                    requestSuccess = {
 
                         val imageTest = "https://upload.motgame.vn/photos/motgame-vn/2021/12/r3.jpg"
                         (activity as HomeActivity).replaceFragment(
@@ -98,7 +102,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                                 imageTest,
                                 getString(R.string.video_test),
                                 "Idol Xinh Gái"
-                            ),R.id.layout_Home)
+                            ), R.id.layout_Home
+                        )
 
                     })
             }

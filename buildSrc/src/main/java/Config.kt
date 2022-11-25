@@ -1,7 +1,7 @@
 object Config {
   object AppConfig {
     const val appId = "org.app.androidbase"
-    const val compileSdkVersion = 32
+    const val compileSdkVersion = 33
     const val minSdkVersion = 28
     const val versionCode = 104
     const val versionName = "1.0.1"
